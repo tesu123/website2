@@ -686,7 +686,7 @@ button.contact-btn {
 .contact-box {
   flex: 1;
   max-width: 45%;
-  background-color: #ffffff;
+  background-color: #000000;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -717,7 +717,7 @@ button.contact-btn {
 
 .info-item .details h4 {
   margin: 0 0 0.5rem;
-  color: #3f396d;
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: bold;
 }
@@ -730,7 +730,7 @@ button.contact-btn {
 }
 
 .info-item .details a {
-  color: #3f396d;
+  color: #00ff74;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -807,7 +807,7 @@ button.contact-btn {
 /* Footer Section */
 .footer {
   /* background-color: #232231; */
-  background-color: #403e42;
+  background-color: #000000;
   color: #ffffff;
   padding: 2rem 1rem;
   font-size: 0.9rem;
