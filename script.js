@@ -35,23 +35,4 @@ const textElement = document.getElementById('dynamic-text');
       // Start the typing effect
       typeEffect();
 
-// hamburger menu
-
-      const hamburger = document.getElementById('hamburger');
-      const navMenu = document.getElementById('nav-menu');
-      const navLinks = document.querySelectorAll('.nav-link');
-    
-      // Toggle the hamburger menu
-      hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('open');
-      });
-    
-      // Close the menu and scroll to section on link click
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          hamburger.classList.remove('open');
-        });
-      });
 
