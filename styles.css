@@ -136,7 +136,7 @@ input[type="checkbox"] {
 }
 
 .heading-contact h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #3f396d;
   font-weight: bold;
   margin-top: 0.5rem;
@@ -266,6 +266,28 @@ input[type="checkbox"] {
 
   .contact-box, .contact-form-container {
     max-width: 100%;
+  }
+
+
+  
+  .info-item .details h4 {
+    margin: 0 0 0.5rem;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: bold;
+  }
+  
+  .info-item .details p {
+    margin: 0;
+    color: #666;
+    font-size: 0.6rem;
+    line-height: 1.6;
+  }
+  
+  .info-item .details a {
+    color: #00ff74;
+    text-decoration: none;
+    transition: color 0.3s ease;
   }
 }
 
