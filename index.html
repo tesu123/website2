@@ -16,7 +16,8 @@
 
     <!-- CSS Styles -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <!-- Google Fonts -->
     <link
@@ -52,6 +53,134 @@
     </header>
 
     <main>
+
+      <!-- Main content sections -->
+
+      <!-- Hero Section starts -->
+      <!-- <section id="home" class="hero">
+        <div class="container">
+          <div>
+            <h2 style="color: #3f396d">
+              Hello! I Am <br /><span>Abhijit Rabidas</span>
+            </h2>
+            <p>
+              <span id="dynamic-text"></span>
+            </p>
+          </div>
+          <div class="social-links">
+            <img src="assets/icons/fb.png">
+            <img src="assets/icons/ig.png">
+            <img src="assets/icons/tw.png">
+            <img src="assets\icons\lnn.png">
+          </div>
+          <div>
+            <img src="assets/images/img.jpg" class="img-fluid" alt />
+          </div>
+          <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+      </section> -->
+      <!-- Hero Section ends -->
+      
+
+      <!-- Skills Section starts-->
+      <section class="skills" id="skills">
+        <div class="heading-skills">
+          <small>My Expertise</small>
+          <h3>Skills & Tools</h3>
+        </div>
+        <div class="skills-container">
+          <!-- Skill Group -->
+          <div class="skill-group">
+            <h4>Programming Languages</h4>
+            <div class="skill-items">
+              <div class="skill-item">C</div>
+              <div class="skill-item">C++</div>
+              <div class="skill-item">Java</div>
+              <div class="skill-item">Python</div>
+            </div>
+          </div>
+          <!-- Skill Group -->
+          <div class="skill-group">
+            <h4>Web Development</h4>
+            <div class="skill-items">
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+              <div class="skill-item">JavaScript</div>
+              <div class="skill-item">React</div>
+            </div>
+          </div>
+          <!-- Skill Group -->
+          <div class="skill-group">
+            <h4>Tools & Platforms</h4>
+            <div class="skill-items">
+              <div class="skill-item">Git</div>
+              <div class="skill-item">GitHub</div>
+              <div class="skill-item">Visual Studio Code</div>
+              <div class="skill-item">Linux</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Skills Section ends-->
+
+      <!-- Projects Section Starts-->
+      <section class="projects" id="projects">
+        <div class="heading">
+          <small>My Work</small>
+          <h3>Projects I've Built</h3>
+        </div>
+        <div class="project-container">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <img src="assets/images/thumnail.png" alt="Project 1 Thumbnail"
+              class="project-thumbnail">
+            <div class="project-details">
+              <h4>Project Title 1</h4>
+              <p>A brief description of Project 1 goes here, highlighting its
+                features and functionality.</p>
+              <div class="project-links">
+                <a href="https://github.com/username/project1" target="_blank"
+                  class="btn github-btn">View Code</a>
+                <a href="https://project1-live-demo.com" target="_blank"
+                  class="btn live-btn">Live View</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="project-card">
+            <img src="assets/images/thumnail.png" alt="Project 2 Thumbnail"
+              class="project-thumbnail">
+            <div class="project-details">
+              <h4>Project Title 2</h4>
+              <p>A brief description of Project 2 goes here, highlighting its
+                features and functionality.</p>
+              <div class="project-links">
+                <a href="https://github.com/username/project2" target="_blank"
+                  class="btn github-btn">View Code</a>
+                <a href="https://project2-live-demo.com" target="_blank"
+                  class="btn live-btn">Live View</a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="project-card">
+            <img src="assets/images/thumnail.png" alt="Project 3 Thumbnail"
+              class="project-thumbnail">
+            <div class="project-details">
+              <h4>Project Title 3</h4>
+              <p>A brief description of Project 3 goes here, highlighting its
+                features and functionality.</p>
+              <div class="project-links">
+                <a href="https://github.com/username/project3" target="_blank"
+                  class="btn github-btn">View Code</a>
+                <a href="https://project3-live-demo.com" target="_blank"
+                  class="btn live-btn">Live View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Projects Section Starts-->
 
       <!-- Contact Section starts-->
       <section class="contact" id="contact">
@@ -119,22 +248,27 @@
               </div>
               <button type="submit" class="btn-submit">Submit</button>
             </form> -->
-            <form id="contact-form" class="contact-form" action="/send" method="POST">
+            <form id="contact-form" class="contact-form" action="/send"
+              method="POST">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" placeholder="Name" required />
+                <input type="text" name="name" class="form-control"
+                  placeholder="Name" required />
               </div>
               <div class="form-group">
-                <input type="email" name="email" class="form-control" placeholder="E-mail" required />
+                <input type="email" name="email" class="form-control"
+                  placeholder="E-mail" required />
               </div>
               <div class="form-group">
-                <input type="text" name="mobile" class="form-control" placeholder="Mobile No." />
+                <input type="text" name="mobile" class="form-control"
+                  placeholder="Mobile No." />
               </div>
               <div class="form-group">
-                <textarea name="message" class="form-control" placeholder="Message" rows="5" required></textarea>
+                <textarea name="message" class="form-control"
+                  placeholder="Message" rows="5" required></textarea>
               </div>
               <button type="submit" class="btn-submit">Submit</button>
             </form>
-            
+
           </div>
         </div>
       </section>
@@ -148,31 +282,23 @@
           <div class="footer-col">
             <h4>about me</h4>
             <p>
-           I'm Abhijit Rabidas, a passionate software developer always eager to
-           learn
-           and create innovative solutions. Let's connect and build something
-           amazing!
-           </p>
+              I'm Abhijit Rabidas, a passionate software developer always eager
+              to
+              learn
+              and create innovative solutions. Let's connect and build something
+              amazing!
+            </p>
           </div>
           <div class="footer-col">
             <h4>Quick Links</h4>
             <ul>
-           <li><a href="#home">Home</a></li>
-           <li><a href="#about">About</a></li>
-           <li><a href="#skills">Skills</a></li>
-           <li><a href="#projects">Projects</a></li>
-           <li><a href="#contact">Contact</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-          <!-- <div class="footer-col">
-            <h4>online shop</h4>
-            <ul>
-              <li><a href="#">watch</a></li>
-              <li><a href="#">bag</a></li>
-              <li><a href="#">shoes</a></li>
-              <li><a href="#">dress</a></li>
-            </ul>
-          </div> -->
           <div class="footer-col">
             <h4>follow me</h4>
             <div class="social-links">
@@ -184,15 +310,14 @@
           </div>
         </div>
       </div>
- 
+
       <div class="footer-bottom">
-         <p>&copy; 2025 Abhijit Rabidas. All Rights Reserved.</p>
-       </div>
-       
-   </footer>
+        <p>&copy; 2025 Abhijit Rabidas. All Rights Reserved.</p>
+      </div>
 
+    </footer>
 
-     <script>
+    <script>
         const menuLinks = document.querySelectorAll("nav ul li a");
   const menuCheckbox = document.getElementById("click");
 

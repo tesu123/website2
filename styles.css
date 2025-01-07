@@ -116,6 +116,207 @@ input[type="checkbox"] {
 /* Header Ends*/
 
 
+/* Hero Section Styling starts*/
+
+  
+/*hero section ends here*/
+
+
+/* Skills Section starts*/
+.skills {
+  padding: 4rem 2rem;
+  background-color: #051416;
+}
+
+.heading-skills {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.heading-skills small {
+  font-size: 1rem;
+  color: #fca61f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.heading-skills h3 {
+  font-size: 2rem;
+  color: #3f396d;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.skills-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Skill Group */
+.skill-group {
+  background-color: #f5f4e7;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.skill-group h4 {
+  font-size: 1.5rem;
+  color: #3f396d;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  border-bottom: 2px solid #fca61f;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill-item {
+  background-color: #fca61f;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-transform: capitalize;
+  transition: background-color 0.3s ease;
+}
+
+.skill-item:hover {
+  background-color: #e5941c;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Skills Section ends*/
+
+/* Project Section starts*/
+.projects {
+  padding: 4rem 1rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.projects .heading small {
+  font-size: 1rem;
+  color: #fca61f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.projects .heading h3 {
+  font-size: 2rem;
+  color: #3f396d;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.project-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-details {
+  padding: 1.5rem;
+}
+
+.project-details h4 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.project-details p {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.project-links .btn {
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.github-btn {
+  background-color: #3f396d;
+  color: #ffffff;
+}
+
+.github-btn:hover {
+  background-color: #fca61f;
+  color: #3f396d;
+}
+
+.live-btn {
+  background-color: #fca61f;
+  color: #ffffff;
+}
+
+.live-btn:hover {
+  background-color: #3f396d;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .project-details p {
+    font-size: 0.85rem;
+  }
+
+  .project-links .btn {
+    font-size: 0.8rem;
+  }
+}
+/* Project Section ends*/
+
 /* Contact Section Styling starts here*/
 /* Contact Section */
 .contact {
