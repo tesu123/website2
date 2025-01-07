@@ -254,9 +254,10 @@
             </div>
 
           </div>
+          
           <!-- Contact Form -->
           <div class="contact-form-container">
-            <form id="contact-form">
+            <form id="contact-form" class="contact-form">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" placeholder="Name" required />
               </div>
@@ -321,8 +322,8 @@
 
     </footer>
 
-    <script>
-        const menuLinks = document.querySelectorAll("nav ul li a");
+  <script>
+  const menuLinks = document.querySelectorAll("nav ul li a");
   const menuCheckbox = document.getElementById("click");
 
   // Add click event listeners to each menu link
@@ -334,45 +335,11 @@
       }
     });
   });
-     </script>
-    <!-- js file linking -->
-    <script src="script.js"></script>
+  </script>
 
 
-    <!-- <script>
-      document.getElementById("contact-form").addEventListener("submit", async function (e) {
-        e.preventDefault(); // Prevent the default form submission
-    
-        const form = e.target;
-        const formData = new FormData(form); // Collect form data
-        const messageDiv = document.getElementById("form-message");
-    
-        try {
-          // Send the form data to the server
-          const response = await fetch("/api/send-email", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(Object.fromEntries(formData)), // Convert FormData to JSON
-          });
-    
-          // Handle the response
-          const result = await response.json();
-    
-          if (response.ok) {
-            // Show success message
-            messageDiv.innerHTML = `<p style="color: green;">${result.message}</p>`;
-            form.reset(); // Clear the form
-          } else {
-            // Show error message
-            messageDiv.innerHTML = `<p style="color: red;">${result.message}</p>`;
-          }
-        } catch (error) {
-          console.error("Error:", error);
-          messageDiv.innerHTML = `<p style="color: red;">Failed to send email. Please try again later.</p>`;
-        }
-      });
-    </script> -->
+<!-- js file linking -->
+<script src="script.js"></script>
 
 </body>
-
 </html>
