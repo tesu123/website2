@@ -8,7 +8,6 @@ body, html {
   box-sizing: border-box;
 }
 
-
 /* Header  Starts*/
 /*Nav Bar Section */
 header {
@@ -113,7 +112,7 @@ input[type="checkbox"] {
     transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 }
-/* Header Ends*/
+/* Header Section Ends*/
 
 
 /* Hero Section Styling starts*/
@@ -228,7 +227,6 @@ input[type="checkbox"] {
       margin-top: 20px;
   }
 }
-  
 /*hero section ends here*/
 
 
@@ -311,6 +309,7 @@ input[type="checkbox"] {
     }
 /*About section ends*/
 
+
 /* Skills Section starts*/
 .skills {
   padding: 4rem 2rem;
@@ -392,8 +391,8 @@ input[type="checkbox"] {
     grid-template-columns: 1fr;
   }
 }
-
 /* Skills Section ends*/
+
 
 /* Project Section starts*/
 .projects {
@@ -506,6 +505,7 @@ input[type="checkbox"] {
 }
 /* Project Section ends*/
 
+
 /* Contact Section Styling starts here*/
 /* Contact Section */
 .contact {
@@ -596,6 +596,7 @@ input[type="checkbox"] {
 .info-item .details a:hover {
   color: #fca61f;
 }
+
 
 /* Contact Form */
 .contact-form-container {
@@ -827,7 +828,6 @@ ul{
     width: 100%;
 }
 }
-
 /* Footer Section starst here */
 
 
