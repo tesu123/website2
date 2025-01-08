@@ -186,7 +186,7 @@ input[type="checkbox"] {
 }
 
 .button {
-  background-color: #4c3d99;
+  background-color: #343b9b;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -197,7 +197,7 @@ input[type="checkbox"] {
 }
 
 .button:hover {
-  background-color: #3b2d7d;
+  background-color: #7965dd;
 }
 
 .image {
@@ -246,17 +246,20 @@ input[type="checkbox"] {
 
     .about .heading {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+      font-weight: bold;
     }
 
     .about .heading small {
       color: #ff0000;
       font-size: 18px;
       text-transform: uppercase;
+      font-weight: bold;
+      font-style: italic;
     }
 
     .about .heading h3 {
-      font-size: 36px;
+      font-size: 30px;
       color: white;
       margin: 10px 0 0;
     }
@@ -319,22 +322,33 @@ input[type="checkbox"] {
 }
 
 .heading-skills {
+  /* text-align: center;
+  margin-bottom: 2rem; */
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 
 .heading-skills small {
-  font-size: 1rem;
+  /* font-size: 1rem;
   color: #ff0000;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2px; */
+  color: #ff0000;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .heading-skills h3 {
-  font-size: 2rem;
+  /* font-size: 2rem;
   color: #ffffff;
   font-weight: bold;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem; */
+  font-size: 30px;
+  color: white;
+  margin: 10px 0 0;
 }
 
 .skills-container {
@@ -404,17 +418,25 @@ input[type="checkbox"] {
 }
 
 .projects .heading small {
-  font-size: 1rem;
+  /* font-size: 1rem;
   color: #ff0000;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2px; */
+  color: #ff0000;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .projects .heading h3 {
-  font-size: 2rem;
+  /* font-size: 2rem;
   color: #ffffff;
   font-weight: bold;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem; */
+  font-size: 30px;
+  color: white;
+  margin: 10px 0 0;
 }
 
 .project-container {
@@ -517,22 +539,33 @@ input[type="checkbox"] {
 }
 
 .heading-contact {
+  /* text-align: center;
+  margin-bottom: 2rem; */
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 
 .heading-contact small {
-  font-size: 1rem;
+  /* font-size: 1rem;
   color: #ff0000;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2px; */
+  color: #ff0000;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .heading-contact h3 {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem;
   color: #ffffff;
   font-weight: bold;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem; */
+  font-size: 30px;
+  color: white;
+  margin: 10px 0 0;
 }
 
 .contact-container {
@@ -638,7 +671,7 @@ input[type="checkbox"] {
 }
 
 .contact-form .btn-submit {
-  background-color: #fca61f;
+  background-color: #343b9b;
   color: #fff;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
@@ -649,7 +682,7 @@ input[type="checkbox"] {
 }
 
 .contact-form .btn-submit:hover {
-  background-color: #e5941c;
+  background-color: #7965dd;
 }
 
 /* Responsive Design */
