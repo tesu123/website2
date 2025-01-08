@@ -53,3 +53,16 @@ $(document).ready(function () {
     }
   });
 });
+
+// Disable Right-Click
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+
+
+// Disable Keyboard Shortcuts
+document.addEventListener('keydown', function (e) {
+  if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'i' || e.key === 'I') || e.key === 'F12') {
+      e.preventDefault();
+  }
+});
