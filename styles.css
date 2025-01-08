@@ -457,7 +457,7 @@ input[type="checkbox"] {
   overflow-y: auto;       /* Enable vertical scrolling */
   overflow-x: hidden;     /* Disable horizontal scrolling */
   border: 1px solid #ccc; /* Border for visibility */
-  background-color: #fff; /* Background color for the box */
+  background-color: #e4e1e1; /* Background color for the box */
   padding: 15px;          /* Space inside the box */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow for aesthetics */
   border-radius: 8px;     /* Optional: Rounded corners */
