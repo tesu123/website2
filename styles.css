@@ -486,8 +486,8 @@ input[type="checkbox"] {
 }
 
 .project-thumbnail {
-  margin-top: 10px;
-  width: 300px;
+  /* margin-top: 10px; */
+  width: 100%;
   height: 200px;
   object-fit: cover;
 }
@@ -547,9 +547,6 @@ input[type="checkbox"] {
 @media screen and (max-width: 768px) {
   .project-details p {
     font-size: 0.85rem;
-  }
-  .project-details {
-    width: 350px;
   }
 
   .project-links .btn {
