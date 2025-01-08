@@ -57,7 +57,7 @@ nav ul li a {
 nav ul li a.active,
 nav ul li a:hover {
   color: #fff;
-  background: #1a56db;
+  background: #ff0000;
 }
 
 nav .menu-btn i {
@@ -120,7 +120,7 @@ input[type="checkbox"] {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8;
+  background-color: #000000;
   color: #333;
 }
 
@@ -150,19 +150,19 @@ input[type="checkbox"] {
 
 .text h1 {
   font-size: 36px;
-  color: #4c3d99;
+  color: #ff0101;
   margin: 0;
 }
 
 .text h2 {
   font-size: 42px;
-  color: #ff6a6a;
+  color: #ffffff;
   margin: 10px 0;
 }
 
 .text p {
   font-size: 18px;
-  color: #666;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -175,13 +175,13 @@ input[type="checkbox"] {
 
 .social-icons a {
   font-size: 20px;
-  color: #333;
+  color: #4fe7c1;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .social-icons a:hover {
-  color: #4c3d99;
+  color: #674ee6;
 }
 
 .button {
@@ -210,7 +210,7 @@ input[type="checkbox"] {
   height: 300px;
   object-fit: cover;
   border-radius: 50%;
-  background-color: #ffdf00;
+  background-color: #ff0000;
   padding: 10px;
 }
 
@@ -235,7 +235,7 @@ input[type="checkbox"] {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #1c1c1c;
+      background-color: #000000;
       color: white;
     }
 
@@ -249,7 +249,7 @@ input[type="checkbox"] {
     }
 
     .about .heading small {
-      color: #ff4c4c;
+      color: #ff0000;
       font-size: 18px;
       text-transform: uppercase;
     }
@@ -313,7 +313,7 @@ input[type="checkbox"] {
 /* Skills Section starts*/
 .skills {
   padding: 4rem 2rem;
-  background-color: #051416;
+  background-color: #000000;
 }
 
 .heading-skills {
@@ -323,14 +323,14 @@ input[type="checkbox"] {
 
 .heading-skills small {
   font-size: 1rem;
-  color: #fca61f;
+  color: #ff0000;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .heading-skills h3 {
   font-size: 2rem;
-  color: #3f396d;
+  color: #ffffff;
   font-weight: bold;
   margin-top: 0.5rem;
 }
@@ -345,7 +345,7 @@ input[type="checkbox"] {
 
 /* Skill Group */
 .skill-group {
-  background-color: #f5f4e7;
+  background-color: #393939;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -354,7 +354,7 @@ input[type="checkbox"] {
 
 .skill-group h4 {
   font-size: 1.5rem;
-  color: #3f396d;
+  color: #1eb361;
   margin-bottom: 1rem;
   font-weight: bold;
   border-bottom: 2px solid #fca61f;
@@ -397,20 +397,20 @@ input[type="checkbox"] {
 /* Project Section starts*/
 .projects {
   padding: 4rem 1rem;
-  background-color: #f8f9fa;
+  background-color: #000000;
   text-align: center;
 }
 
 .projects .heading small {
   font-size: 1rem;
-  color: #fca61f;
+  color: #ff0000;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .projects .heading h3 {
   font-size: 2rem;
-  color: #3f396d;
+  color: #ffffff;
   font-weight: bold;
   margin-top: 0.5rem;
 }
@@ -424,7 +424,7 @@ input[type="checkbox"] {
 }
 
 .project-card {
-  background-color: #000000;
+  background-color: #2d2c2c;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -510,7 +510,7 @@ input[type="checkbox"] {
 /* Contact Section */
 .contact {
   padding: 4rem 2rem;
-  background-color: #ebe1e1;
+  background-color: #000000;
 }
 
 .heading-contact {
@@ -520,14 +520,14 @@ input[type="checkbox"] {
 
 .heading-contact small {
   font-size: 1rem;
-  color: #fca61f;
+  color: #ff0000;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .heading-contact h3 {
   font-size: 1.5rem;
-  color: #3f396d;
+  color: #ffffff;
   font-weight: bold;
   margin-top: 0.5rem;
 }
@@ -544,7 +544,7 @@ input[type="checkbox"] {
 .contact-box {
   flex: 1;
   max-width: 45%;
-  background-color: #000000;
+  background-color: #2d2c2c;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -605,7 +605,7 @@ input[type="checkbox"] {
 }
 
 .contact-form {
-  background-color: #ffffff;
+  background-color: #2d2c2c;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -712,7 +712,7 @@ ul{
     padding: 70px 0;
 }
 .footer-col{
-   width: 25%;
+   width: 30%;
    padding: 0 15px;
 }
 .footer-col h4{
@@ -728,7 +728,7 @@ ul{
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #e91e63;
+	background-color: #ff0000;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
