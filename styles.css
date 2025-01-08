@@ -548,6 +548,9 @@ input[type="checkbox"] {
   .project-details p {
     font-size: 0.85rem;
   }
+  .project-details {
+    width: 350px;
+  }
 
   .project-links .btn {
     font-size: 0.8rem;
