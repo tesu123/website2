@@ -378,28 +378,16 @@ input[type="checkbox"] {
   padding-bottom: 0.3rem;
 }
 
-.skill-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+.skills-logos img {
+  height: 60px;
+  margin: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.skill-item {
-  background-color: #fca61f;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  text-transform: capitalize;
-  transition: background-color 0.3s ease;
+.skills-logos img:hover {
+  transform: scale(1.2);
 }
 
-.skill-item:hover {
-  background-color: #e5941c;
-}
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
