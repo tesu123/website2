@@ -179,10 +179,12 @@ input[type="checkbox"] {
   color: #4fe7c1;
   text-decoration: none;
   transition: color 0.3s;
+  /* transition: color 0.3s ease, transform 0.3s ease; */
 }
 
 .social-icons a:hover {
   color: #674ee6;
+  transform: scale(1.2);
 }
 
 .button {
@@ -823,11 +825,12 @@ ul{
 	line-height: 40px;
 	border-radius: 50%;
 	color: #ffffff;
-	transition: all 0.5s ease;
+  transition: color 0.5s ease, transform 0.5s ease;
 }
 .footer-col .social-links a:hover{
 	color: #24262b;
 	background-color: #ffffff;
+  transform: scale(1.1);
 }
 
 .footer-bottom {
