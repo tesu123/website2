@@ -455,7 +455,7 @@ input[type="checkbox"] {
 
 .project-container {
   display: grid;
-  gap: 2rem;
+  gap: 0rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   max-width: 1200px;
   margin: 0 auto;
