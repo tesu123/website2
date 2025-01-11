@@ -457,7 +457,7 @@ input[type="checkbox"] {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
   margin-top: 40px;
 }
