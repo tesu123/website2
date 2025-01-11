@@ -546,6 +546,11 @@ input[type="checkbox"] {
   .project-links .btn {
     font-size: 0.8rem;
   }
+
+  .project-card {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -555,10 +560,6 @@ input[type="checkbox"] {
   }
 }
 
-.project-card {
-  margin-left: 5px;
-  margin-right: 10px;
-}
 /* Project Section ends*/
 
 
