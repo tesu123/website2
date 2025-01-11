@@ -469,7 +469,7 @@ input[type="checkbox"] {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 400px;
-  width: 270px;
+  width: 260px;
 }
 
 .project-card:hover {
