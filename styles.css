@@ -457,7 +457,7 @@ input[type="checkbox"] {
   display: grid;
   gap: 3rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  max-width: 1500px;
+  max-width:1600px;
   margin: 0 auto;
   margin-top: 20px;
 }
@@ -469,7 +469,9 @@ input[type="checkbox"] {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 380px;
-  width: 260px;
+  width: 265px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .project-card:hover {
