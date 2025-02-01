@@ -23,7 +23,7 @@ function Hero() {
       </div>
 
       {/* Text Section */}
-      <div className="text-center md:text-left md:mr-16 mb-8 md:mb-0">
+      <div className="text-center md:text-left md:mr-20 mb-8 md:mb-0 transform -translate-y-10">
         <h1 className="text-5xl font-bold mb-2">Hello! I Am</h1>
         <h2
           className="text-4xl font-semibold mb-4"
@@ -96,7 +96,7 @@ function Hero() {
       </div>
 
       {/* Image Section */}
-      <div className="w-40 h-44 md:w-60 md:h-64 mt-8 md:mt-0 md:ml-12">
+      <div className="w-40 h-44 md:w-60 md:h-64 mt-8 md:mt-0 md:ml-12 transform -translate-y-10">
         <img
           src={img}
           alt="Abhijit Rabidas"
