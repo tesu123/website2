@@ -1,29 +1,6 @@
-import { useEffect } from "react";
 import img from "./assets/images/profileimg.png";
 
 function Hero() {
-  // Add scroll-based fade-in/fade-out effects
-  useEffect(() => {
-    const handleScroll = () => {
-      const elements = document.querySelectorAll(".fade-on-scroll");
-      elements.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-        const isVisible = elementTop < window.innerHeight && elementBottom >= 0;
-        if (isVisible) {
-          element.style.opacity = "1";
-          element.style.transform = "translateY(0)";
-        } else {
-          element.style.opacity = "0";
-          element.style.transform = "translateY(20px)";
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div
       className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-black text-gray-200 px-8 relative overflow-hidden"
@@ -46,14 +23,7 @@ function Hero() {
       </div>
 
       {/* Text Section */}
-      <div
-        className="text-center md:text-left md:mr-16 mb-8 md:mb-0 fade-on-scroll"
-        style={{
-          opacity: "0",
-          transform: "translateY(20px)",
-          transition: "opacity 1s ease-in-out, transform 1s ease-in-out",
-        }}
-      >
+      <div className="text-center md:text-left md:mr-30 mb-12 md:mb-18">
         <h1 className="text-5xl font-bold mb-2">Hello! I Am</h1>
         <h2
           className="text-4xl font-semibold mb-4"
@@ -126,14 +96,7 @@ function Hero() {
       </div>
 
       {/* Image Section */}
-      <div
-        className="w-40 h-44 md:w-60 md:h-64 mt-8 md:mt-0 md:ml-12 fade-on-scroll"
-        style={{
-          opacity: "0",
-          transform: "translateY(20px)",
-          transition: "opacity 1s ease-in-out, transform 1s ease-in-out",
-        }}
-      >
+      <div className="w-64 h-90 mt-16 md:mt-0 md:ml-24">
         <img
           src={img}
           alt="Abhijit Rabidas"
