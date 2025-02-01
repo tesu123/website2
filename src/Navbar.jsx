@@ -52,7 +52,7 @@ function Navbar() {
             menuOpen
               ? "block opacity-100 translate-y-0"
               : "hidden opacity-0 translate-y-[-20px]"
-          } absolute top-full right-0 w-1/2 h-[calc(100vh-4rem)] bg-gray-900 text-white rounded-lg shadow-lg overflow-y-auto md:static md:w-auto md:h-auto md:block md:opacity-100 md:translate-y-0 md:bg-transparent md:shadow-none md:rounded-none transition-all duration-300 flex flex-col justify-between`}
+          } absolute top-full right-0 w-1/2 bg-gray-900 text-white rounded-lg shadow-lg md:static md:w-auto md:block md:opacity-100 md:translate-y-0 md:bg-transparent md:shadow-none md:rounded-none transition-all duration-300`}
         >
           {/* Menu Links */}
           <ul className="flex flex-col md:flex-row md:space-x-4">
@@ -110,7 +110,7 @@ function Navbar() {
 
           {/* Social Links (Visible on Small Screens) */}
           <div className="md:hidden mt-4 border-t border-gray-700 pt-4">
-            <ul className="flex justify-center space-x-4">
+            <ul className="flex space-x-4 justify-center">
               <li>
                 <a
                   href="https://github.com/yourusername"
@@ -118,7 +118,7 @@ function Navbar() {
                   rel="noopener noreferrer"
                   className="flex items-center py-2 px-4 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
                 >
-                  <i className="fab fa-github text-xl"></i>
+                  <i className="fab fa-github text-2xl"></i>
                 </a>
               </li>
               <li>
@@ -128,7 +128,7 @@ function Navbar() {
                   rel="noopener noreferrer"
                   className="flex items-center py-2 px-4 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
                 >
-                  <i className="fab fa-linkedin text-xl"></i>
+                  <i className="fab fa-linkedin text-2xl"></i>
                 </a>
               </li>
               <li>
@@ -138,7 +138,7 @@ function Navbar() {
                   rel="noopener noreferrer"
                   className="flex items-center py-2 px-4 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
                 >
-                  <i className="fab fa-twitter text-xl"></i>
+                  <i className="fab fa-twitter text-2xl"></i>
                 </a>
               </li>
             </ul>
