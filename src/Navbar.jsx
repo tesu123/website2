@@ -46,7 +46,7 @@ function Navbar() {
           ></i>
         </button>
 
-        {/* Menu Links */}
+        {/* Menu Links and Social Links */}
         <div
           className={`${
             menuOpen
@@ -54,6 +54,7 @@ function Navbar() {
               : "hidden opacity-0 translate-y-[-20px]"
           } absolute top-full right-0 w-1/2 bg-gray-900 text-white rounded-lg shadow-lg md:static md:w-auto md:block md:opacity-100 md:translate-y-0 md:bg-transparent md:shadow-none md:rounded-none transition-all duration-300`}
         >
+          {/* Menu Links */}
           <ul className="flex flex-col md:flex-row md:space-x-4">
             <li>
               <a
@@ -106,6 +107,42 @@ function Navbar() {
               </a>
             </li>
           </ul>
+
+          {/* Social Links (Visible on Small Screens) */}
+          <div className="md:hidden mt-4 border-t border-gray-700 pt-4">
+            <ul className="flex flex-col space-y-2">
+              <li>
+                <a
+                  href="https://github.com/yourusername"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center py-2 px-6 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
+                >
+                  <i className="fab fa-github mr-2"></i> GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com/in/yourusername"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center py-2 px-6 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
+                >
+                  <i className="fab fa-linkedin mr-2"></i> LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/yourusername"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center py-2 px-6 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
+                >
+                  <i className="fab fa-twitter mr-2"></i> Twitter
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
