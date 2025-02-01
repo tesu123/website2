@@ -8,6 +8,7 @@ function Navbar() {
     setMenuOpen(!menuOpen);
   };
 
+  // Add scroll-based fade-in/fade-out effects
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -28,10 +29,12 @@ function Navbar() {
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
+        {/* Brand Name */}
         <div className="text-white text-lg font-bold hover:text-emerald-400 transition-all duration-300">
           Abhijit R.
         </div>
 
+        {/* Hamburger Menu Icon */}
         <button
           onClick={toggleMenu}
           className="text-white cursor-pointer z-50 md:hidden relative"
@@ -43,17 +46,21 @@ function Navbar() {
           ></i>
         </button>
 
+        {/* Menu Links and Social Links */}
         <div
           className={`${
             menuOpen
               ? "block opacity-100 translate-y-0"
               : "hidden opacity-0 translate-y-[-20px]"
-          } fixed top-0 right-0 w-2/3 h-full bg-gray-900 text-white rounded-l-lg shadow-lg overflow-y-auto md:static md:w-auto md:h-auto md:block md:opacity-100 md:translate-y-0 md:bg-transparent md:shadow-none md:rounded-none transition-all duration-300 flex flex-col justify-between`}
+          } absolute top-full right-0 w-1/2 h-[calc(100vh-4rem)] bg-gray-900 text-white rounded-lg shadow-lg overflow-y-auto md:static md:w-auto md:h-auto md:block md:opacity-100 md:translate-y-0 md:bg-transparent md:shadow-none md:rounded-none transition-all duration-300 flex flex-col justify-between`}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-4 p-6 md:p-0">
+          {/* Menu Links */}
+          <ul className="flex flex-col md:flex-row md:space-x-4">
             <li>
               <a
-                className="block py-4 px-6 transition-all duration-300 hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400"
+                className={`block py-4 px-6 transition-all duration-300 ${
+                  !menuOpen ? "transform hover:scale-105" : ""
+                } hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400`}
                 href="#home"
               >
                 Home
@@ -61,7 +68,9 @@ function Navbar() {
             </li>
             <li>
               <a
-                className="block py-4 px-6 transition-all duration-300 hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400"
+                className={`block py-4 px-6 transition-all duration-300 ${
+                  !menuOpen ? "transform hover:scale-105" : ""
+                } hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400`}
                 href="#about"
               >
                 About
@@ -69,7 +78,9 @@ function Navbar() {
             </li>
             <li>
               <a
-                className="block py-4 px-6 transition-all duration-300 hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400"
+                className={`block py-4 px-6 transition-all duration-300 ${
+                  !menuOpen ? "transform hover:scale-105" : ""
+                } hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400`}
                 href="#skills"
               >
                 Skills
@@ -77,7 +88,9 @@ function Navbar() {
             </li>
             <li>
               <a
-                className="block py-4 px-6 transition-all duration-300 hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400"
+                className={`block py-4 px-6 transition-all duration-300 ${
+                  !menuOpen ? "transform hover:scale-105" : ""
+                } hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400`}
                 href="#projects"
               >
                 Projects
@@ -85,7 +98,9 @@ function Navbar() {
             </li>
             <li>
               <a
-                className="block py-4 px-6 transition-all duration-300 hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400"
+                className={`block py-4 px-6 transition-all duration-300 ${
+                  !menuOpen ? "transform hover:scale-105" : ""
+                } hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400`}
                 href="#contact"
               >
                 Contact
@@ -93,7 +108,8 @@ function Navbar() {
             </li>
           </ul>
 
-          <div className="md:hidden mt-auto p-6 border-t border-gray-700">
+          {/* Social Links (Visible on Small Screens) */}
+          <div className="md:hidden mt-4 border-t border-gray-700 pt-4">
             <ul className="flex justify-center space-x-4">
               <li>
                 <a
