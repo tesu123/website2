@@ -113,7 +113,7 @@ function Navbar() {
             <ul className="flex space-x-4 justify-center">
               <li>
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/Abhijit-Rabidas"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center py-2 px-4 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
@@ -123,7 +123,7 @@ function Navbar() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/abhijit-rabidas"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center py-2 px-4 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
@@ -133,7 +133,7 @@ function Navbar() {
               </li>
               <li>
                 <a
-                  href="https://twitter.com/yourusername"
+                  href="#home"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center py-2 px-4 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
