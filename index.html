@@ -1,92 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Character Set, Viewport, and Author -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Abhijit Rabidas">
+
+    <!-- Description, Keywords, and Robots -->
     <meta name="description"
       content="Abhijit Rabidas - Web Developer Portfolio. Showcasing my projects, skills, and experience in front-end and back-end development.">
     <meta name="keywords"
       content="Abhijit Rabidas, Web Developer, Frontend, Backend, Full Stack Developer, Portfolio, JavaScript, React, HTML, CSS, MySQL">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph Meta Tags (for social media sharing) -->
-    <meta property="og:title"
-      content="Abhijit Rabidas | Web Developer Portfolio">
+    <!-- Open Graph Meta Tags (Social Media Sharing) -->
+    <meta property="og:title" content="Abhijit Rabidas | Web Developer Portfolio">
     <meta property="og:description"
       content="Showcasing my web development skills, projects, and experience in frontend and backend technologies.">
-    <meta property="og:image"
-      content="https://abhijitrabidas.live/path-to-thumbnail.jpg">
+    <meta property="og:image" content="https://abhijitrabidas.live/path-to-thumbnail.jpg">
     <meta property="og:url" content="https://abhijitrabidas.live">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title"
-      content="Abhijit Rabidas | Web Developer Portfolio">
+    <meta name="twitter:title" content="Abhijit Rabidas | Web Developer Portfolio">
     <meta name="twitter:description"
       content="Showcasing my web development skills, projects, and experience in frontend and backend technologies.">
-    <meta name="twitter:image"
-      content="https://abhijitrabidas.live/path-to-thumbnail.jpg">
+    <meta name="twitter:image" content="https://abhijitrabidas.live/path-to-thumbnail.jpg">
 
+    <!-- Title and Canonical URL -->
     <title>Abhijit Rabidas | Web Developer Portfolio</title>
     <link rel="canonical" href="https://abhijitrabidas.live">
+
+    <!-- Favicon Links -->
     <link rel="icon" type="image/png" href="https://abhijitrabidas/favicon.ico">
-
-    <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet">
-
-    <!-- SEO Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Abhijit Rabidas | Web Developer Portfolio",
-        "url": "https://abhijitrabidas.live",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://abhijitrabidas.live/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        },
-        "hasPart": [
-          {
-            "@type": "WebPage",
-            "name": "Home",
-            "url": "https://abhijitrabidas.live#home"
-          },
-          {
-            "@type": "WebPage",
-            "name": "About",
-            "url": "https://abhijitrabidas.live#about"
-          },
-          {
-            "@type": "WebPage",
-            "name": "Skills",
-            "url": "https://abhijitrabidas.live#skills"
-          },
-          {
-            "@type": "WebPage",
-            "name": "Projects",
-            "url": "https://abhijitrabidas.live#projects"
-          },
-          {
-            "@type": "WebPage",
-            "name": "Contact",
-            "url": "https://abhijitrabidas.live#contact"
-          }
-        ]
-      }
-      </script>
-
-    <!-- Favicon -->
-    <!-- <link rel="icon" href="assets/icons/favicon.ico" type="image"> -->
     <link rel="apple-touch-icon" sizes="180x180"
       href="./src/assets/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32"
@@ -95,27 +42,69 @@
       href="./src/assets/icons/favicon-16x16.png">
     <link rel="manifest" href="./src/assets/icons/site.webmanifest">
 
-    <!-- CSS Styles -->
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- SEO Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Abhijit Rabidas | Web Developer Portfolio",
+      "url": "https://abhijitrabidas.live",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://abhijitrabidas.live/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "name": "Home",
+          "url": "https://abhijitrabidas.live#home"
+        },
+        {
+          "@type": "WebPage",
+          "name": "About",
+          "url": "https://abhijitrabidas.live#about"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Skills",
+          "url": "https://abhijitrabidas.live#skills"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Projects",
+          "url": "https://abhijitrabidas.live#projects"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Contact",
+          "url": "https://abhijitrabidas.live#contact"
+        }
+      ]
+    }
+    </script>
 
   </head>
 
   <body>
+    <!-- The main container for your app or content -->
     <div id="root"></div>
+
+    <!-- Your JavaScript entry point -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
-
 </html>
