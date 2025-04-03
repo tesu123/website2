@@ -4,25 +4,25 @@ import ProjectThumbnail from "./assets/images/thumnail2.png";
 function Projects() {
   const projects = [
     {
+      title: "Portfolio Website",
+      description: "Modern responsive portfolio built with React and Tailwind CSS",
+      tags: ["React", "Tailwind CSS", "Vite", "Responsive"],
+      github: "https://github.com/Abhijit-Rabidas/Portfolio-Website",
+      demo: "https://www.abhijitrabidas.live"
+    },
+    {
       title: "E-Commerce Platform",
       description: "Full-stack e-commerce solution with React, Node.js, and MongoDB",
       tags: ["React", "Node.js", "MongoDB", "Redux"],
-      github: "https://github.com/username/ecommerce",
-      demo: "https://ecommerce-demo.com"
+      github: "https://github.com/Abhijit-Rabidas/E-Commerce-Platform",
+      demo: "https://ecommerce.abhijitrabidas.live"
     },
     {
       title: "Task Management App",
       description: "Productivity application with drag-and-drop functionality",
       tags: ["React", "Firebase", "Tailwind CSS", "DnD"],
-      github: "https://github.com/username/task-manager",
-      demo: "https://taskmanager-demo.com"
-    },
-    {
-      title: "Portfolio Website",
-      description: "Modern responsive portfolio built with Next.js",
-      tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
-      github: "https://github.com/username/portfolio",
-      demo: "https://myportfolio.com"
+      github: "https://github.com/Abhijit-Rabidas/Task-Manager",
+      demo: "https://taskmanager.abhijitrabidas.live"
     }
   ];
 
@@ -49,22 +49,21 @@ function Projects() {
               aria-labelledby={`project-${index}-title`}
             >
               {/* Project Image */}
-              <div className="h-48 overflow-hidden">
+              <div className="h-48 overflow-hidden relative">
                 <img
                   src={ProjectThumbnail}
                   alt={`Screenshot of ${project.title}`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <div className="text-white">
-                    <h3 id={`project-${index}-title`} className="text-xl font-bold mb-2">{project.title}</h3>
-                    <div className="flex flex-wrap gap-2 mb-3">
+                {/* Always visible overlay with tech stack */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent flex items-end p-4">
+                  <div className="w-full">
+                    <div className="flex flex-wrap gap-2 mb-2">
                       {project.tags.map((tag, i) => (
                         <span 
                           key={i}
                           className="text-xs font-medium px-2 py-1 bg-blue-500/20 text-blue-600 dark:text-blue-400 rounded"
-                          aria-hidden="true"
                         >
                           {tag}
                         </span>
@@ -76,16 +75,18 @@ function Projects() {
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
+                <h3 id={`project-${index}-title`} className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  {project.title}
+                </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                 
-                {/* Project Links - Accessible Buttons */}
-                <div className="flex space-x-3">
+                {/* Project Links - Always visible buttons */}
+                <div className="flex space-x-3 mt-4">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center px-4 py-2 text-sm font-medium rounded-md bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    className="flex-1 text-center px-4 py-2 text-sm font-medium rounded-md bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                     aria-label={`View code for ${project.title} on GitHub`}
                   >
                     <span className="flex items-center justify-center">
@@ -99,7 +100,7 @@ function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center px-4 py-2 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    className="flex-1 text-center px-4 py-2 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                     aria-label={`View live demo of ${project.title}`}
                   >
                     <span className="flex items-center justify-center">
@@ -118,10 +119,10 @@ function Projects() {
         {/* View More Button */}
         <div className="text-center mt-12">
           <a
-            href="https://github.com/username"
+            href="https://github.com/Abhijit-Rabidas"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             aria-label="View all projects on GitHub"
           >
             View All Projects
