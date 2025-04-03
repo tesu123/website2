@@ -56,7 +56,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- SEO Structured Data (JSON-LD) -->
+    <!-- SEO Structured Data (JSON-LD) - Enhanced for Sitelinks -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -67,32 +67,45 @@
         "@type": "SearchAction",
         "target": "https://abhijitrabidas.live/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
-      },
-      "hasPart": [
+      }
+    }
+    </script>
+    
+    <!-- Additional Structured Data for Breadcrumbs (Helps with Sitelinks) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
         {
-          "@type": "WebPage",
+          "@type": "ListItem",
+          "position": 1,
           "name": "Home",
-          "url": "https://abhijitrabidas.live#home"
+          "item": "https://abhijitrabidas.live#home"
         },
         {
-          "@type": "WebPage",
+          "@type": "ListItem",
+          "position": 2,
           "name": "About",
-          "url": "https://abhijitrabidas.live#about"
+          "item": "https://abhijitrabidas.live#about"
         },
         {
-          "@type": "WebPage",
+          "@type": "ListItem",
+          "position": 3,
           "name": "Skills",
-          "url": "https://abhijitrabidas.live#skills"
+          "item": "https://abhijitrabidas.live#skills"
         },
         {
-          "@type": "WebPage",
+          "@type": "ListItem",
+          "position": 4,
           "name": "Projects",
-          "url": "https://abhijitrabidas.live#projects"
+          "item": "https://abhijitrabidas.live#projects"
         },
         {
-          "@type": "WebPage",
+          "@type": "ListItem",
+          "position": 5,
           "name": "Contact",
-          "url": "https://abhijitrabidas.live#contact"
+          "item": "https://abhijitrabidas.live#contact"
         }
       ]
     }
@@ -106,5 +119,14 @@
 
     <!-- Your JavaScript entry point -->
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Hidden navigation links for SEO (helps Google understand site structure) -->
+    <nav aria-hidden="true" style="display:none">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </body>
 </html>

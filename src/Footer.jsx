@@ -18,7 +18,7 @@ function Footer() {
             </p>
             <div className="pt-2">
               <a 
-                href="mailto:your.email@example.com" 
+                href="mailto:ajdas123.ff@gmail.com" 
                 className="text-red-400 hover:text-red-300 transition-colors flex items-center"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
