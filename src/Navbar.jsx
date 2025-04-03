@@ -112,9 +112,9 @@ function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Changed background to solid */}
         <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? 'max-h-96' : 'max-h-0'}`}>
-          <div className="pt-4 pb-8 space-y-2">
+          <div className="pt-4 pb-8 space-y-2 bg-white dark:bg-gray-900 rounded-lg shadow-lg mt-2">
             {navLinks.map((link) => (
               <a
                 key={link.id}
