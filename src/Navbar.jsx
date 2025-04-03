@@ -3,145 +3,147 @@ import React, { useState, useEffect } from "react";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // Add scroll-based fade-in/fade-out effects
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      setIsScrolled(window.scrollY > 50);
+      
+      // Detect active section
+      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(section);
+            break;
+          }
+        }
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const navLinks = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' }
+  ];
+
+  const socialLinks = [
+    { icon: 'github', url: 'https://github.com/Abhijit-Rabidas' },
+    { icon: 'linkedin', url: 'https://www.linkedin.com/in/abhijit-rabidas' },
+    { icon: 'twitter', url: '#' }
+  ];
 
   return (
     <nav
-      className={`bg-gray-800 p-4 sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-opacity-90 backdrop-blur-sm" : "bg-opacity-100"
+      className={`fixed w-full top-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm" 
+          : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Brand Name */}
-        <div className="text-white text-lg font-bold hover:text-emerald-400 transition-all duration-300">
-          Abhijit R.
+      <div className="container mx-auto px-6 py-3">
+        <div className="flex justify-between items-center">
+          {/* Brand Logo/Name */}
+          <div className="flex items-center">
+            <a 
+              href="#home" 
+              className="text-2xl font-bold bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent"
+            >
+              Abhijit R.
+            </a>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className={`relative px-4 py-2 rounded-lg transition-all duration-300 ${
+                  activeSection === link.id 
+                    ? "text-emerald-600 dark:text-emerald-400 font-medium" 
+                    : "text-gray-700 hover:text-emerald-500 dark:text-gray-300 dark:hover:text-emerald-400"
+                }`}
+              >
+                {link.label}
+                {activeSection === link.id && (
+                  <span className="absolute left-0 bottom-0 w-full h-0.5 bg-emerald-500 transition-all duration-300"></span>
+                )}
+              </a>
+            ))}
+            
+            {/* Social Icons for Desktop */}
+            <div className="ml-6 flex space-x-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.icon}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300"
+                >
+                  <i className={`fab fa-${social.icon} text-xl`}></i>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            aria-label="Toggle menu"
+          >
+            <div className={`w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
+            <div className={`w-6 h-0.5 bg-gray-800 dark:bg-white my-1.5 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></div>
+            <div className={`w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
+          </button>
         </div>
 
-        {/* Hamburger Menu Icon */}
-        <button
-          onClick={toggleMenu}
-          className="text-white cursor-pointer z-50 md:hidden relative"
-        >
-          <i
-            className={`fas ${
-              menuOpen ? "fa-times" : "fa-bars"
-            } text-2xl transition-all duration-300 hover:text-emerald-400`}
-          ></i>
-        </button>
-
-        {/* Menu Links and Social Links */}
-        <div
-          className={`${
-            menuOpen
-              ? "block opacity-100 translate-y-0"
-              : "hidden opacity-0 translate-y-[-20px]"
-          } absolute top-full right-0 w-1/2 bg-gray-900 text-white rounded-lg shadow-lg md:static md:w-auto md:block md:opacity-100 md:translate-y-0 md:bg-transparent md:shadow-none md:rounded-none transition-all duration-300`}
-        >
-          {/* Menu Links */}
-          <ul className="flex flex-col md:flex-row md:space-x-4">
-            <li>
+        {/* Mobile Menu */}
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? 'max-h-96' : 'max-h-0'}`}>
+          <div className="pt-4 pb-8 space-y-2">
+            {navLinks.map((link) => (
               <a
-                className={`block py-4 px-6 transition-all duration-300 ${
-                  !menuOpen ? "transform hover:scale-105" : ""
-                } hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400`}
-                href="#home"
+                key={link.id}
+                href={`#${link.id}`}
+                onClick={() => setMenuOpen(false)}
+                className={`block px-4 py-3 rounded-lg transition-colors duration-300 ${
+                  activeSection === link.id
+                    ? "bg-emerald-100 dark:bg-gray-700 text-emerald-600 dark:text-emerald-400"
+                    : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
+                }`}
               >
-                Home
+                {link.label}
               </a>
-            </li>
-            <li>
-              <a
-                className={`block py-4 px-6 transition-all duration-300 ${
-                  !menuOpen ? "transform hover:scale-105" : ""
-                } hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400`}
-                href="#about"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                className={`block py-4 px-6 transition-all duration-300 ${
-                  !menuOpen ? "transform hover:scale-105" : ""
-                } hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400`}
-                href="#skills"
-              >
-                Skills
-              </a>
-            </li>
-            <li>
-              <a
-                className={`block py-4 px-6 transition-all duration-300 ${
-                  !menuOpen ? "transform hover:scale-105" : ""
-                } hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400`}
-                href="#projects"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                className={`block py-4 px-6 transition-all duration-300 ${
-                  !menuOpen ? "transform hover:scale-105" : ""
-                } hover:bg-gray-700 hover:text-gray-300 md:hover:bg-transparent md:hover:text-emerald-400`}
-                href="#contact"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-
-          {/* Social Links (Visible on Small Screens) */}
-          <div className="md:hidden mt-4 border-t border-gray-700 pt-4">
-            <ul className="flex space-x-4 justify-center">
-              <li>
+            ))}
+            
+            {/* Social Icons for Mobile */}
+            <div className="flex justify-center space-x-6 pt-6">
+              {socialLinks.map((social) => (
                 <a
-                  href="https://github.com/Abhijit-Rabidas"
+                  key={social.icon}
+                  href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center py-2 px-4 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
+                  className="text-gray-600 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300 text-2xl"
                 >
-                  <i className="fab fa-github text-2xl"></i>
+                  <i className={`fab fa-${social.icon}`}></i>
                 </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/abhijit-rabidas"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center py-2 px-4 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
-                >
-                  <i className="fab fa-linkedin text-2xl"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#home"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center py-2 px-4 hover:bg-gray-700 hover:text-gray-300 transition-all duration-300"
-                >
-                  <i className="fab fa-twitter text-2xl"></i>
-                </a>
-              </li>
-            </ul>
+              ))}
+            </div>
           </div>
         </div>
       </div>

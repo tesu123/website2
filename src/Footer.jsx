@@ -1,116 +1,135 @@
+import React from "react";
+import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram, FaFacebookF } from "react-icons/fa";
+
 function Footer() {
   return (
-    <footer className="bg-neutral-900 text-white py-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* About Me Section */}
-          <div className="footer-col">
-            {/* <h4 className="text-xl font-bold mb-4">About Me</h4> */}
-            <h4 className="text-xl font-bold mb-4 relative inline-block">
-              About Me
-              <span className="absolute top-8 left-0 w-15 h-0.5 bg-red-600"></span>
-            </h4>
-            <p className="text-gray-400">
-              I'm Abhijit Rabidas, a passionate software developer always eager
-              to learn and create innovative solutions. Let's connect and build
-              something amazing!
+    <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+          {/* About Section */}
+          <div className="space-y-4">
+            <div className="flex items-center">
+              <h3 className="text-xl font-bold text-white relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-12 after:h-0.5 after:bg-red-500">
+                About Me
+              </h3>
+            </div>
+            <p className="text-gray-400 leading-relaxed">
+              I'm Abhijit Rabidas, a passionate software developer specializing in creating innovative digital solutions. Currently pursuing my Master's in Computer Applications at Jadavpur University.
             </p>
+            <div className="pt-2">
+              <a 
+                href="mailto:your.email@example.com" 
+                className="text-red-400 hover:text-red-300 transition-colors flex items-center"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                abhijit.rabidas@example.com
+              </a>
+            </div>
           </div>
 
-          {/* Quick Links Section */}
-          <div className="footer-col">
-            {/* <h4 className="text-xl font-bold mb-4">Quick Links</h4> */}
-            <h4 className="text-xl font-bold mb-4 relative inline-block">
-              Quick Links
-              <span className="absolute top-8 left-0 w-15 h-0.5 bg-red-600"></span>
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#home" className="text-gray-400 hover:text-white">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-gray-400 hover:text-white">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#skills" className="text-gray-400 hover:text-white">
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a href="#projects" className="text-gray-400 hover:text-white">
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-gray-400 hover:text-white">
-                  Contact
-                </a>
-              </li>
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <div className="flex items-center">
+              <h3 className="text-xl font-bold text-white relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-12 after:h-0.5 after:bg-red-500">
+                Quick Links
+              </h3>
+            </div>
+            <ul className="space-y-3">
+              {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
+                <li key={item}>
+                  <a 
+                    href={`#${item}`} 
+                    className="text-gray-400 hover:text-white transition-colors flex items-center group"
+                  >
+                    <span className="w-2 h-2 bg-red-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Follow Me Section */}
-          <div className="footer-col">
-            {/* <h4 className="text-xl font-bold mb-4">Follow Me</h4> */}
-            <h4 className="text-xl font-bold mb-4 relative inline-block">
-              Follow Me
-              <span className="absolute top-8 left-0 w-15 h-0.5 bg-red-600"></span>
-            </h4>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white text-xl"
+          {/* Social Links */}
+          <div className="space-y-4">
+            <div className="flex items-center">
+              <h3 className="text-xl font-bold text-white relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-12 after:h-0.5 after:bg-red-500">
+                Connect With Me
+              </h3>
+            </div>
+            <p className="text-gray-400">
+              Feel free to reach out through any of these platforms:
+            </p>
+            <div className="flex space-x-4 pt-2">
+              <a 
+                href="https://www.facebook.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-red-500 transition-all"
                 aria-label="Facebook"
               >
-                <i className="fab fa-facebook-f"></i>
+                <FaFacebookF className="w-5 h-5" />
               </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white text-xl"
+              <a 
+                href="https://twitter.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-red-500 transition-all"
                 aria-label="Twitter"
               >
-                <i className="fab fa-twitter"></i>
+                <FaTwitter className="w-5 h-5" />
               </a>
-              <a
-                href="https://www.instagram.com/aj_das_01?igsh=cnVmMnF1a3M4MjM2"
-                target="_blank"
-                className="text-gray-400 hover:text-white text-xl"
+              <a 
+                href="https://www.instagram.com/aj_das_01?igsh=cnVmMnF1a3M4MjM2" 
+                target="_blank" 
                 rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-red-500 transition-all"
                 aria-label="Instagram"
               >
-                <i className="fab fa-instagram"></i>
+                <FaInstagram className="w-5 h-5" />
               </a>
-              <a
-                href="https://www.linkedin.com/in/abhijit-rabidas"
-                target="_blank"
-                className="text-gray-400 hover:text-white text-xl"
+              <a 
+                href="https://www.linkedin.com/in/abhijit-rabidas" 
+                target="_blank" 
                 rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-red-500 transition-all"
                 aria-label="LinkedIn"
               >
-                <i className="fab fa-linkedin-in"></i>
+                <FaLinkedinIn className="w-5 h-5" />
               </a>
-              <a
-                href="https://github.com/Abhijit-Rabidas"
-                target="_blank"
-                className="text-gray-400 hover:text-white text-xl"
+              <a 
+                href="https://github.com/Abhijit-Rabidas" 
+                target="_blank" 
                 rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-red-500 transition-all"
                 aria-label="GitHub"
               >
-                <i className="fab fa-github"></i>
+                <FaGithub className="w-5 h-5" />
               </a>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="border-t border-gray-700 mt-8 pt-4">
-        <p className="text-center text-gray-500">
-          &copy; 2025 Abhijit Rabidas. All Rights Reserved.
-        </p>
+        {/* Copyright Section */}
+        <div className="border-t border-gray-800 pt-8 mt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-500 text-sm mb-4 md:mb-0">
+              &copy; {new Date().getFullYear()} Abhijit Rabidas. All rights reserved.
+            </p>
+            <div className="flex space-x-6">
+              <a href="#" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">
+                Terms of Service
+              </a>
+              <a href="#" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">
+                Sitemap
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
