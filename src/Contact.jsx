@@ -166,38 +166,30 @@
 
 // export default Contact;
 
-import React from "react";
+import React, { useState } from "react";
 import { FiMapPin, FiPhone, FiMail, FiSend } from "react-icons/fi";
+import { sendEmail } from "../api/emailService";
 
 function Contact() {
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const [submitStatus, setSubmitStatus] = React.useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value || "Not provided",
+      message: e.target.message.value,
+    };
 
     try {
-      const response = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        e.target.reset();
-      } else {
-        throw new Error(result.message || "Failed to send message");
-      }
+      await sendEmail(formData);
+      setSubmitStatus("success");
+      e.target.reset();
     } catch (error) {
       console.error("Error:", error);
       setSubmitStatus("error");
@@ -406,7 +398,6 @@ function Contact() {
                 )}
               </button>
 
-              {/* Status Messages */}
               {submitStatus === "success" && (
                 <div className="mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
                   Message sent successfully! I'll get back to you soon.
