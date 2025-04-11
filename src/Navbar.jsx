@@ -1,20 +1,30 @@
 import React, { useState, useEffect } from "react";
+import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram } from "react-icons/fa";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [isClosing, setIsClosing] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    if (menuOpen) {
+      setIsClosing(true);
+      setTimeout(() => {
+        setMenuOpen(false);
+        setIsClosing(false);
+      }, 300);
+    } else {
+      setMenuOpen(true);
+    }
   };
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       // Detect active section
-      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      const sections = ["home", "about", "skills", "projects", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -27,29 +37,42 @@ function Navbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' }
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
   ];
 
   const socialLinks = [
-    { icon: 'github', url: 'https://github.com/Abhijit-Rabidas' },
-    { icon: 'linkedin', url: 'https://www.linkedin.com/in/abhijit-rabidas' },
-    { icon: 'twitter', url: '#' }
+    {
+      icon: <FaGithub />,
+      url: "https://github.com/Abhijit-Rabidas",
+      label: "GitHub",
+    },
+    {
+      icon: <FaLinkedinIn />,
+      url: "https://www.linkedin.com/in/abhijit-rabidas",
+      label: "LinkedIn",
+    },
+    { icon: <FaTwitter />, url: "#", label: "Twitter" },
+    {
+      icon: <FaInstagram />,
+      url: "https://www.instagram.com/aj_das_01",
+      label: "Instagram",
+    },
   ];
 
   return (
     <nav
-      className={`fixed w-full top-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm" 
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -57,9 +80,9 @@ function Navbar() {
         <div className="flex justify-between items-center">
           {/* Brand Logo/Name */}
           <div className="flex items-center">
-            <a 
-              href="#home" 
-              className="text-2xl font-bold bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent"
+            <a
+              href="#home"
+              className="text-2xl font-bold bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent hover:opacity-90 transition-opacity"
             >
               Abhijit R.
             </a>
@@ -71,30 +94,35 @@ function Navbar() {
               <a
                 key={link.id}
                 href={`#${link.id}`}
-                className={`relative px-4 py-2 rounded-lg transition-all duration-300 ${
-                  activeSection === link.id 
-                    ? "text-emerald-600 dark:text-emerald-400 font-medium" 
-                    : "text-gray-700 hover:text-emerald-500 dark:text-gray-300 dark:hover:text-emerald-400"
+                className={`relative px-4 py-2 rounded-lg transition-all duration-300 group ${
+                  activeSection === link.id
+                    ? "text-emerald-600 dark:text-emerald-400 font-medium"
+                    : "text-gray-500 hover:text-emerald-500 dark:text-gray-300 dark:hover:text-emerald-400"
                 }`}
               >
                 {link.label}
-                {activeSection === link.id && (
-                  <span className="absolute left-0 bottom-0 w-full h-0.5 bg-emerald-500 transition-all duration-300"></span>
-                )}
+                <span
+                  className={`absolute left-1/2 bottom-0 h-0.5 bg-emerald-500 transition-all duration-300 ${
+                    activeSection === link.id
+                      ? "w-full -translate-x-1/2"
+                      : "w-0 group-hover:w-full group-hover:-translate-x-1/2"
+                  }`}
+                ></span>
               </a>
             ))}
-            
+
             {/* Social Icons for Desktop */}
             <div className="ml-6 flex space-x-4">
-              {socialLinks.map((social) => (
+              {socialLinks.map((social, index) => (
                 <a
-                  key={social.icon}
+                  key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300"
+                  className="text-gray-400 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                  aria-label={social.label}
                 >
-                  <i className={`fab fa-${social.icon} text-xl`}></i>
+                  {social.icon}
                 </a>
               ))}
             </div>
@@ -103,44 +131,75 @@ function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
             aria-label="Toggle menu"
           >
-            <div className={`w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
-            <div className={`w-6 h-0.5 bg-gray-800 dark:bg-white my-1.5 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></div>
-            <div className={`w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
+            <div
+              className={`w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+                menuOpen ? "rotate-45 translate-y-1.5" : ""
+              }`}
+            ></div>
+            <div
+              className={`w-6 h-0.5 bg-gray-800 dark:bg-white my-1.5 transition-all duration-300 ${
+                menuOpen ? "opacity-0" : ""
+              }`}
+            ></div>
+            <div
+              className={`w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+                menuOpen ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
+            ></div>
           </button>
         </div>
 
-        {/* Mobile Menu - Changed background to solid */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? 'max-h-96' : 'max-h-0'}`}>
-          <div className="pt-4 pb-8 space-y-2 bg-white dark:bg-gray-900 rounded-lg shadow-lg mt-2">
+        {/* Mobile Menu */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            menuOpen
+              ? isClosing
+                ? "max-h-0 opacity-0"
+                : "max-h-screen opacity-100"
+              : "max-h-0 opacity-0"
+          }`}
+        >
+          <div
+            className={`pt-4 pb-8 space-y-2 bg-white dark:bg-gray-900 rounded-lg shadow-lg mt-2 transition-opacity duration-300 ${
+              menuOpen && !isClosing ? "opacity-100" : "opacity-0"
+            }`}
+          >
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
-                onClick={() => setMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg transition-colors duration-300 ${
+                onClick={() => {
+                  setIsClosing(true);
+                  setTimeout(() => {
+                    setMenuOpen(false);
+                    setIsClosing(false);
+                  }, 300);
+                }}
+                className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
                   activeSection === link.id
-                    ? "bg-emerald-100 dark:bg-gray-700 text-emerald-600 dark:text-emerald-400"
-                    : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
+                    ? "bg-gradient-to-r from-emerald-500/10 to-teal-600/10 text-emerald-600 dark:text-emerald-400 font-medium"
+                    : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
                 }`}
               >
                 {link.label}
               </a>
             ))}
-            
+
             {/* Social Icons for Mobile */}
-            <div className="flex justify-center space-x-6 pt-6">
-              {socialLinks.map((social) => (
+            <div className="flex justify-center space-x-4 pt-6">
+              {socialLinks.map((social, index) => (
                 <a
-                  key={social.icon}
+                  key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300 text-2xl"
+                  className="text-gray-600 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                  aria-label={social.label}
                 >
-                  <i className={`fab fa-${social.icon}`}></i>
+                  {social.icon}
                 </a>
               ))}
             </div>
