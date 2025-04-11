@@ -7,6 +7,8 @@ import {
   FaLightbulb,
 } from "react-icons/fa";
 
+import image from "./assets/images/image.png";
+
 function About() {
   const [activeTab, setActiveTab] = useState("about");
 
@@ -163,9 +165,11 @@ function About() {
                   <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
                   <div className="relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
                     <div className="h-64 w-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
-                      <span className="text-4xl font-bold text-gray-300 dark:text-gray-600">
-                        AR
-                      </span>
+                      <img
+                        src={image}
+                        alt="Abhijit Rabidas"
+                        className="w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-gray-800 group-hover:border-transparent transition-all duration-500"
+                      />
                     </div>
                   </div>
                 </div>
