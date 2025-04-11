@@ -162,15 +162,14 @@ function About() {
               {/* Image or Stats */}
               <div className="bg-gray-50 dark:bg-gray-700 p-10 flex flex-col justify-center items-center">
                 <div className="relative group mb-8">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
-                  <div className="relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                    <div className="h-64 w-64 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
-                      <img
-                        src={image}
-                        alt="Abhijit Rabidas"
-                        className="w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-gray-800 group-hover:border-transparent transition-all duration-500"
-                      />
-                    </div>
+                  <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500 animate-spin-slow"></div>
+                  <div className="relative">
+                    <img
+                      src={imgage}
+                      alt="Abhijit Rabidas"
+                      className="w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-gray-800 group-hover:border-transparent transition-all duration-500"
+                    />
+                    <div className="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-white/10 transition-all duration-500"></div>
                   </div>
                 </div>
 
