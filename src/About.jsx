@@ -1,18 +1,3 @@
-// function About() {
-//   return (
-//     <div className="about">
-//       <h2>About Me</h2>
-//       <p>
-//         I'm a software developer with a passion for creating web applications.
-//       </p>
-//       <p>I enjoy learning new technologies and improving my skills.</p>
-//       <p>In my free time, I like to read books and explore the outdoors.</p>
-//     </div>
-//   );
-// }
-
-// export default About;
-
 import React, { useState } from "react";
 import {
   FaGraduationCap,
