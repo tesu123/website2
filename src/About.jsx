@@ -165,7 +165,7 @@ function About() {
                   <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500 animate-spin-slow"></div>
                   <div className="relative">
                     <img
-                      src={imgage}
+                      src={image}
                       alt="Abhijit Rabidas"
                       className="w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-gray-800 group-hover:border-transparent transition-all duration-500"
                     />
