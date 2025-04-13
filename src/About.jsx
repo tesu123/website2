@@ -125,7 +125,7 @@ function About() {
                       Email
                     </p>
                     <p className="font-medium text-gray-800 dark:text-white">
-                      ajdas123.ff@gmail.com
+                      ajdas123.ff @gmail.com
                     </p>
                   </div>
                   <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
