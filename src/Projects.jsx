@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import ProjectThumbnail from "./assets/images/thumnail2.png";
+import DummyProjectTh from "./assets/images/dummy.png";
 
 function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const projects = [
     {
+      pimage: ProjectThumbnail,
       title: "Portfolio Website",
       description:
         "Modern responsive portfolio built with React and Tailwind CSS",
@@ -16,6 +18,7 @@ function Projects() {
       category: "web",
     },
     {
+      pimage: DummyProjectTh,
       title: "E-Commerce Platform",
       description:
         "Full-stack e-commerce solution with React, Node.js, and MongoDB",
@@ -25,6 +28,7 @@ function Projects() {
       category: "fullstack",
     },
     {
+      pimage: DummyProjectTh,
       title: "Task Management App",
       description: "Productivity application with drag-and-drop functionality",
       tags: ["React", "Firebase", "Tailwind CSS", "DnD"],
@@ -33,6 +37,7 @@ function Projects() {
       category: "web",
     },
     {
+      pimage: DummyProjectTh,
       title: "AI Image Generator",
       description: "Web application that generates images using AI models",
       tags: ["React", "Python", "TensorFlow", "Flask"],
@@ -41,6 +46,7 @@ function Projects() {
       category: "ai",
     },
     {
+      pimage: DummyProjectTh,
       title: "Weather Dashboard",
       description: "Real-time weather forecasting application with maps",
       tags: ["React", "API", "Chart.js", "Geolocation"],
@@ -49,6 +55,7 @@ function Projects() {
       category: "web",
     },
     {
+      pimage: DummyProjectTh,
       title: "Chat Application",
       description: "Real-time messaging platform with user authentication",
       tags: ["React", "Firebase", "WebSockets", "Tailwind CSS"],
@@ -192,7 +199,7 @@ const ProjectCard = ({ project, index }) => (
   >
     <div className="h-48 overflow-hidden relative">
       <img
-        src={ProjectThumbnail}
+        src={project.pimage}
         alt={`Screenshot of ${project.title}`}
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         loading="lazy"

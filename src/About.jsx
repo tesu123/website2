@@ -122,10 +122,10 @@ function About() {
                   </div>
                   <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Email
+                      Phone No
                     </p>
                     <p className="font-medium text-gray-800 dark:text-white">
-                      ajdas123.ff @gmail.com
+                      +91 7679489050
                     </p>
                   </div>
                   <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
@@ -328,7 +328,14 @@ function About() {
                   },
                   {
                     category: "Tools",
-                    skills: ["Git", "Github", "VS Code", "Vercel", "Matlab", "Linux"],
+                    skills: [
+                      "Git",
+                      "Github",
+                      "VS Code",
+                      "Vercel",
+                      "Matlab",
+                      "Linux",
+                    ],
                   },
                 ].map((skillGroup, index) => (
                   <div
