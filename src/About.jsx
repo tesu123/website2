@@ -125,7 +125,7 @@ function About() {
                       Email
                     </p>
                     <p className="font-medium text-gray-800 dark:text-white">
-                      abhijit@example.com
+                      ajdas123.ff@gmail.com
                     </p>
                   </div>
                   <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
@@ -176,7 +176,7 @@ function About() {
                 <div className="grid grid-cols-3 gap-4 w-full">
                   <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center">
                     <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                      10+
+                      3+
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                       Projects
@@ -184,7 +184,7 @@ function About() {
                   </div>
                   <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center">
                     <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                      3+
+                      0+
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                       Years Experience
@@ -320,21 +320,15 @@ function About() {
                   },
                   {
                     category: "Backend",
-                    skills: [
-                      "Node.js",
-                      "Express",
-                      "MongoDB",
-                      "Firebase",
-                      "REST APIs",
-                    ],
+                    skills: ["Node.js", "Express", "MySQL", "PostgreSQL"],
                   },
                   {
                     category: "Languages",
-                    skills: ["JavaScript", "Python", "Java", "C", "SQL"],
+                    skills: ["C", "C++", "JavaScript", "Python", "Java", "SQL"],
                   },
                   {
                     category: "Tools",
-                    skills: ["Git", "VS Code", "Figma", "Postman", "Linux"],
+                    skills: ["Git", "Github", "VS Code", "Vercel", "Matlab", "Linux"],
                   },
                 ].map((skillGroup, index) => (
                   <div

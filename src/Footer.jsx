@@ -88,20 +88,18 @@ function Footer() {
               </h3>
             </div>
             <ul className="space-y-3">
-              {["home", "about", "skills", "projects", "contact"].map(
-                (item) => (
-                  <li key={item}>
-                    <motion.a
-                      href={`#${item}`}
-                      whileHover={{ x: 5 }}
-                      className="text-gray-400 hover:text-white transition-colors flex items-center group"
-                    >
-                      <span className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {item.charAt(0).toUpperCase() + item.slice(1)}
-                    </motion.a>
-                  </li>
-                )
-              )}
+              {["home", "about", "projects", "contact"].map((item) => (
+                <li key={item}>
+                  <motion.a
+                    href={`#${item}`}
+                    whileHover={{ x: 5 }}
+                    className="text-gray-400 hover:text-white transition-colors flex items-center group"
+                  >
+                    <span className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                  </motion.a>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
