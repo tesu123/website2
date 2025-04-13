@@ -115,11 +115,18 @@ function Hero() {
               >
                 Contact Me
               </a>
-              <a
+              {/* <a
                 href="#projects"
                 className="px-8 py-3 border border-gray-700 text-gray-300 font-medium rounded-lg hover:bg-gray-800/50 transition-all duration-300 transform hover:-translate-y-1"
               >
-                View Projects
+                Download CV
+              </a> */}
+              <a
+                href="D:\WEB_DEVELOPMENT\PROJECT\React_Portfolio\src\assets\files\Abhijit_Rabidas.pdf" // Update this path to where your CV is stored
+                download="Abhijit_Rabidas_Resume.pdf" // This will be the suggested filename when downloaded
+                className="px-8 py-3 border border-gray-700 text-gray-300 font-medium rounded-lg hover:bg-gray-800/50 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                Download CV
               </a>
             </div>
 
