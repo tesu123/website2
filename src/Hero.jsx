@@ -138,7 +138,7 @@ function Hero() {
             </div>
 
             {/* Social links */}
-            <div className="flex justify-center lg:justify-start gap-8 mt-8">
+            <div className="hidden sm:flex justify-center lg:justify-start gap-8 mt-8">
               {[
                 {
                   icon: "linkedin-in",
