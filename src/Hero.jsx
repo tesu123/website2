@@ -116,10 +116,10 @@ function Hero() {
               >
                 Contact Me
               </a> */}
-              <div className="flex justify-center sm:justify-start space-x-8">
+              <div className="flex justify-center sm:justify-start space-x-5">
                 <a
                   href="#contact"
-                  className="w-45 sm:w-auto px-4 sm:px-8 py-3 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1 text-center"
+                  className="w-35 sm:w-auto px-4 sm:px-8 py-3 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1 text-center"
                 >
                   Contact Me
                 </a>
@@ -129,7 +129,7 @@ function Hero() {
                   href={resume} // Use the imported resume file
                   download="Abhijit_Rabidas_Resume.pdf" // This will be the suggested filename when downloaded
                   // className="px-8 py-3 border border-gray-700 text-gray-300 font-medium rounded-lg hover:bg-gray-800/50 transition-all duration-300 transform hover:-translate-y-1"
-                  className="w-45 sm:w-auto px-4 sm:px-8 py-3 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1 text-center"
+                  className="w-35 sm:w-auto px-4 sm:px-8 py-3 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1 text-center"
                 >
                   Download Resume
                   {/* View Resume */}
