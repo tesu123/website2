@@ -8,7 +8,8 @@ function Projects() {
   const projects = [
     {
       title: "Portfolio Website",
-      description: "Modern responsive portfolio built with React and Tailwind CSS",
+      description:
+        "Modern responsive portfolio built with React and Tailwind CSS",
       tags: ["React", "Tailwind CSS", "Vite", "Responsive"],
       github: "https://github.com/Abhijit-Rabidas/Portfolio-Website",
       demo: "https://www.abhijitrabidas.live",
@@ -16,7 +17,8 @@ function Projects() {
     },
     {
       title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and MongoDB",
+      description:
+        "Full-stack e-commerce solution with React, Node.js, and MongoDB",
       tags: ["React", "Node.js", "MongoDB", "Redux"],
       github: "https://github.com/Abhijit-Rabidas/E-Commerce-Platform",
       demo: "https://ecommerce.abhijitrabidas.live",
@@ -217,7 +219,9 @@ const ProjectCard = ({ project, index }) => (
       >
         {project.title}
       </h3>
-      <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+      <p className="text-gray-600 dark:text-gray-300 mb-4">
+        {project.description}
+      </p>
       <div className="flex space-x-3 mt-4">
         <a
           href={project.github}
@@ -231,14 +235,15 @@ const ProjectCard = ({ project, index }) => (
           href={project.demo}
           target="_blank"
           rel="noopener noreferrer"
-          className={`flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+          className={`flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 group/demo ${
             project.demo === "#"
               ? "bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed"
               : "bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:shadow-lg hover:shadow-emerald-500/30"
           }`}
+          aria-label={`View live demo of ${project.title}`}
           onClick={(e) => project.demo === "#" && e.preventDefault()}
         >
-          <FaExternalLinkAlt className="mr-2" />
+          <FaExternalLinkAlt className="mr-2 group-hover/demo:translate-x-1 transition-transform duration-300" />
           Demo
         </a>
       </div>
