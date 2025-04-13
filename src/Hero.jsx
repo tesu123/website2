@@ -98,7 +98,7 @@ function Hero() {
                 Abhijit Rabidas
               </span> */}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
-                Abhijit Rabidas
+                Abhijit Rabida
               </span>
             </motion.h1>
 
