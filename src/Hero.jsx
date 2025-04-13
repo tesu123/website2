@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import img from "./assets/images/profileimg.png";
+import resume from "./assets/files/Abhijit_Rabidas.pdf";
 
 function Hero() {
   const [dynamicText, setDynamicText] = useState("");
@@ -109,29 +110,35 @@ function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a
+              {/* <a
                 href="#contact"
                 className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1"
               >
                 Contact Me
-              </a>
-              {/* <a
-                href="#projects"
-                className="px-8 py-3 border border-gray-700 text-gray-300 font-medium rounded-lg hover:bg-gray-800/50 transition-all duration-300 transform hover:-translate-y-1"
-              >
-                Download CV
               </a> */}
-              <a
-                href="https://shorturl.at/vSwLw" // Update this path to where your CV is stored
-                download="Abhijit_Rabidas_Resume.pdf" // This will be the suggested filename when downloaded
-                className="px-8 py-3 border border-gray-700 text-gray-300 font-medium rounded-lg hover:bg-gray-800/50 transition-all duration-300 transform hover:-translate-y-1"
-              >
-                Download CV
-              </a>
+              <div className="flex justify-center sm:justify-start space-x-8">
+                <a
+                  href="#contact"
+                  className="w-45 sm:w-auto px-4 sm:px-8 py-3 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1 text-center"
+                >
+                  Contact Me
+                </a>
+
+                <a
+                  // href="https://shorturl.at/vSwLw" // to view resume online
+                  href={resume} // Use the imported resume file
+                  download="Abhijit_Rabidas_Resume.pdf" // This will be the suggested filename when downloaded
+                  // className="px-8 py-3 border border-gray-700 text-gray-300 font-medium rounded-lg hover:bg-gray-800/50 transition-all duration-300 transform hover:-translate-y-1"
+                  className="w-45 sm:w-auto px-4 sm:px-8 py-3 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 transform hover:-translate-y-1 text-center"
+                >
+                  Download Resume
+                  {/* View Resume */}
+                </a>
+              </div>
             </div>
 
             {/* Social links */}
-            <div className="flex justify-center lg:justify-start gap-4 mt-8">
+            <div className="flex justify-center lg:justify-start gap-8 mt-8">
               {[
                 {
                   icon: "linkedin-in",

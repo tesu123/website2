@@ -41,6 +41,7 @@ function Navbar() {
     { icon: "github", url: "https://github.com/Abhijit-Rabidas" },
     { icon: "linkedin", url: "https://www.linkedin.com/in/abhijit-rabidas" },
     { icon: "twitter", url: "#" },
+    { icon: "instagram", url: "https://www.instagram.com/aj_das_01" },
   ];
 
   return (
@@ -83,7 +84,7 @@ function Navbar() {
             ))}
 
             {/* Social Icons for Desktop */}
-            <div className="ml-6 flex space-x-4">
+            <div className="ml-6 flex space-x-8">
               {socialLinks.map((social) => (
                 <a
                   key={social.icon}
@@ -148,7 +149,7 @@ function Navbar() {
             <hr className="border-t border-gray-200 dark:border-gray-700 mx-4 my-4" />
 
             {/* Social Icons for Mobile */}
-            <div className="flex justify-center space-x-6 pt-2">
+            <div className="flex justify-center space-x-8 pt-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.icon}
