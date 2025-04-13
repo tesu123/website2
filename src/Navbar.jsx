@@ -7,12 +7,23 @@ function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const [isClosing, setIsClosing] = useState(false);
 
-  // Debounce scroll handler
-  useEffect(() => {
-    let ticking = false;
-    let lastScrollY = window.scrollY;
+  const toggleMenu = () => {
+    if (menuOpen) {
+      setIsClosing(true);
+      setTimeout(() => {
+        setMenuOpen(false);
+        setIsClosing(false);
+      }, 300);
+    } else {
+      setMenuOpen(true);
+    }
+  };
 
-    const updateActiveSection = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+
+      // Detect active section
       const sections = ["home", "about", "skills", "projects", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -26,34 +37,9 @@ function Navbar() {
       }
     };
 
-    const handleScroll = () => {
-      lastScrollY = window.scrollY;
-
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setIsScrolled(lastScrollY > 50);
-          updateActiveSection();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleMenu = () => {
-    if (menuOpen) {
-      setIsClosing(true);
-      setTimeout(() => {
-        setMenuOpen(false);
-        setIsClosing(false);
-      }, 300);
-    } else {
-      setMenuOpen(true);
-    }
-  };
 
   const navLinks = [
     { id: "home", label: "Home" },
@@ -65,18 +51,18 @@ function Navbar() {
 
   const socialLinks = [
     {
-      icon: <FaGithub className="text-lg" />,
+      icon: <FaGithub />,
       url: "https://github.com/Abhijit-Rabidas",
       label: "GitHub",
     },
     {
-      icon: <FaLinkedinIn className="text-lg" />,
+      icon: <FaLinkedinIn />,
       url: "https://www.linkedin.com/in/abhijit-rabidas",
       label: "LinkedIn",
     },
-    { icon: <FaTwitter className="text-lg" />, url: "#", label: "Twitter" },
+    { icon: <FaTwitter />, url: "#", label: "Twitter" },
     {
-      icon: <FaInstagram className="text-lg" />,
+      icon: <FaInstagram />,
       url: "https://www.instagram.com/aj_das_01",
       label: "Instagram",
     },
@@ -86,17 +72,17 @@ function Navbar() {
     <nav
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm"
+          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 py-3">
+      <div className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           {/* Brand Logo/Name */}
           <div className="flex items-center">
             <a
               href="#home"
-              className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent hover:opacity-90 transition-opacity"
             >
               Abhijit R.
             </a>
@@ -108,28 +94,32 @@ function Navbar() {
               <a
                 key={link.id}
                 href={`#${link.id}`}
-                className={`relative px-3 py-2 rounded-lg text-sm sm:text-base ${
+                className={`relative px-4 py-2 rounded-lg transition-all duration-300 group ${
                   activeSection === link.id
                     ? "text-emerald-600 dark:text-emerald-400 font-medium"
                     : "text-gray-500 hover:text-emerald-500 dark:text-gray-300 dark:hover:text-emerald-400"
                 }`}
               >
                 {link.label}
-                {activeSection === link.id && (
-                  <span className="absolute left-1/2 bottom-0 h-0.5 w-4/5 bg-emerald-500 -translate-x-1/2"></span>
-                )}
+                <span
+                  className={`absolute left-1/2 bottom-0 h-0.5 bg-emerald-500 transition-all duration-300 ${
+                    activeSection === link.id
+                      ? "w-full -translate-x-1/2"
+                      : "w-0 group-hover:w-full group-hover:-translate-x-1/2"
+                  }`}
+                ></span>
               </a>
             ))}
 
-            {/* Social Icons */}
-            <div className="ml-4 flex space-x-2">
+            {/* Social Icons for Desktop */}
+            <div className="ml-6 flex space-x-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  className="text-gray-400 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -141,26 +131,24 @@ function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 focus:outline-none"
+            className="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
             aria-label="Toggle menu"
           >
-            <div className="w-6 flex flex-col items-end">
-              <div
-                className={`h-0.5 bg-gray-800 dark:bg-white transition-all ${
-                  menuOpen ? "w-6 rotate-45 translate-y-1.5" : "w-6 mb-1.5"
-                }`}
-              ></div>
-              <div
-                className={`h-0.5 bg-gray-800 dark:bg-white transition-all ${
-                  menuOpen ? "opacity-0" : "w-5 mb-1.5"
-                }`}
-              ></div>
-              <div
-                className={`h-0.5 bg-gray-800 dark:bg-white transition-all ${
-                  menuOpen ? "w-6 -rotate-45 -translate-y-1.5" : "w-4"
-                }`}
-              ></div>
-            </div>
+            <div
+              className={`w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+                menuOpen ? "rotate-45 translate-y-1.5" : ""
+              }`}
+            ></div>
+            <div
+              className={`w-6 h-0.5 bg-gray-800 dark:bg-white my-1.5 transition-all duration-300 ${
+                menuOpen ? "opacity-0" : ""
+              }`}
+            ></div>
+            <div
+              className={`w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+                menuOpen ? "-rotate-45 -translate-y-1.5" : ""
+              }`}
+            ></div>
           </button>
         </div>
 
@@ -174,7 +162,11 @@ function Navbar() {
               : "max-h-0 opacity-0"
           }`}
         >
-          <div className="pt-2 pb-6 space-y-1 bg-white dark:bg-gray-900 mt-2">
+          <div
+            className={`pt-4 pb-8 space-y-2 bg-white dark:bg-gray-900 rounded-lg shadow-lg mt-2 transition-opacity duration-300 ${
+              menuOpen && !isClosing ? "opacity-100" : "opacity-0"
+            }`}
+          >
             {navLinks.map((link) => (
               <a
                 key={link.id}
@@ -186,24 +178,25 @@ function Navbar() {
                     setIsClosing(false);
                   }, 300);
                 }}
-                className={`block px-4 py-3 text-sm ${
+                className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
                   activeSection === link.id
-                    ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
-                    : "text-gray-700 dark:text-gray-300"
+                    ? "bg-gradient-to-r from-emerald-500/10 to-teal-600/10 text-emerald-600 dark:text-emerald-400 font-medium"
+                    : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
                 }`}
               >
                 {link.label}
               </a>
             ))}
 
-            <div className="flex justify-center space-x-4 pt-4 px-4">
+            {/* Social Icons for Mobile */}
+            <div className="flex justify-center space-x-4 pt-6">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                  className="text-gray-600 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300 p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
                   aria-label={social.label}
                 >
                   {social.icon}
