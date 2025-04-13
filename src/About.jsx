@@ -125,7 +125,7 @@ function About() {
                       Phone No
                     </p>
                     <p className="font-medium text-gray-800 dark:text-white">
-                      +91 7679489050
+                      7679489050
                     </p>
                   </div>
                   <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
