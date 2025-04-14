@@ -294,7 +294,7 @@ function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:focus:ring-emerald-400 dark:focus:border-emerald-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300"
-                  placeholder="This feature dose not work as of now..."
+                  placeholder="This feature is temporarily unavailable."
                   required
                 ></textarea>
               </div>
