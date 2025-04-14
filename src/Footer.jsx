@@ -175,7 +175,7 @@ function Footer() {
               &copy; {new Date().getFullYear()} Abhijit Rabidas. All rights
               reserved.
             </p>
-            <div className="flex space-x-6">
+            {/* <div className="flex space-x-6">
               <a
                 href="#"
                 className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
@@ -194,7 +194,7 @@ function Footer() {
               >
                 Sitemap
               </a>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>
