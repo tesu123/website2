@@ -238,10 +238,10 @@ function About() {
                         Current
                       </span>
                     </div>
-                    <p className="mt-3 text-gray-600 dark:text-gray-300">
+                    {/* <p className="mt-3 text-gray-600 dark:text-gray-300">
                       Specializing in advanced algorithms, machine learning, and
                       full-stack development.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
 
@@ -261,10 +261,10 @@ function About() {
                     <p className="text-gray-600 dark:text-gray-400">
                       Ananda Chandra College, University of North Bengal
                     </p>
-                    <p className="mt-3 text-gray-600 dark:text-gray-300">
+                    {/* <p className="mt-3 text-gray-600 dark:text-gray-300">
                       Graduated with honors, focusing on core computer science
                       concepts and software development.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
 
@@ -284,10 +284,10 @@ function About() {
                     <p className="text-gray-600 dark:text-gray-400">
                       West Bengal Joint Entrance for MCA
                     </p>
-                    <p className="mt-3 text-gray-600 dark:text-gray-300">
+                    {/* <p className="mt-3 text-gray-600 dark:text-gray-300">
                       Secured All India Rank 61 among thousands of candidates in
                       the competitive MCA entrance examination.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>
