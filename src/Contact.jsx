@@ -127,7 +127,7 @@ function Contact() {
               Contact Information
             </h3>
 
-            <div className="space-y-8">
+            <div className="space-y-4">
               {/* Address */}
               <div className="flex items-start">
                 <div className="bg-gradient-to-r from-emerald-500 to-teal-600 p-3 rounded-full mr-6 text-white">
@@ -219,15 +219,15 @@ function Contact() {
               Send Me a Message
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name */}
               <div>
-                <label
+                {/* <label
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   Your Name
-                </label>
+                </label> */}
                 <input
                   type="text"
                   id="name"
@@ -235,19 +235,19 @@ function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:focus:ring-emerald-400 dark:focus:border-emerald-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300"
-                  placeholder="John Doe"
+                  placeholder="Name"
                   required
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label
+                {/* <label
                   htmlFor="email"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   Email Address
-                </label>
+                </label> */}
                 <input
                   type="email"
                   id="email"
@@ -255,19 +255,19 @@ function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:focus:ring-emerald-400 dark:focus:border-emerald-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300"
-                  placeholder="your.email@example.com"
+                  placeholder="Email"
                   required
                 />
               </div>
 
               {/* Phone */}
               <div>
-                <label
+                {/* <label
                   htmlFor="phone"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   Phone Number (Optional)
-                </label>
+                </label> */}
                 <input
                   type="tel"
                   id="phone"
@@ -275,18 +275,18 @@ function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:focus:ring-emerald-400 dark:focus:border-emerald-400 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300"
-                  placeholder="+91 1234567890"
+                  placeholder="Mobile No (Optional)"
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label
+                {/* <label
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
                 >
                   Your Message
-                </label>
+                </label> */}
                 <textarea
                   id="message"
                   name="message"
