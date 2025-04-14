@@ -72,5 +72,27 @@
     </noscript>
 
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- // Alternative JavaScript to disable right-click and keyboard shortcuts
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Block right-click
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+          alert('Right-click is disabled on this portfolio');
+        });
+        
+        // Block keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'F12' || 
+              (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+              (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+              (e.ctrlKey && e.key === 'U')) {
+            e.preventDefault();
+            alert('Developer tools are disabled');
+          }
+        });
+      });
+    </script> -->
   </body>
 </html>
