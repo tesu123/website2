@@ -319,7 +319,7 @@ function Contact() {
     setStatus("sending");
 
     try {
-      const response = await fetch("https://website2-0st8.onrender.com", {
+      const response = await fetch("http://localhost:3001/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
