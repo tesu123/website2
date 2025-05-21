@@ -4,8 +4,15 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+  })
+);
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -15,9 +22,9 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-app.get("/" , (req,res) => {
-    res.send("Server is running fine !!!");
-})
+app.get("/", (req, res) => {
+  res.send("Server is running fine !!!");
+});
 
 app.post("/send-email", async (req, res) => {
   const { name, email, message } = req.body;
