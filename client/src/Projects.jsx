@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import ProjectThumbnail from "./assets/images/thumnail2.png";
 import DummyProjectTh from "./assets/images/dummy.png";
+import microdome from "./assets/images/microdome.png";
 
 function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -18,13 +19,13 @@ function Projects() {
       category: "web",
     },
     {
-      pimage: DummyProjectTh,
-      title: "E-Commerce Platform",
+      pimage: microdome,
+      title: "Microdome",
       description:
         "Full-stack e-commerce solution with React, Node.js, and MongoDB",
       tags: ["React", "Node.js", "MongoDB", "Redux"],
-      github: "https://github.com/Abhijit-Rabidas/E-Commerce-Platform",
-      demo: "https://ecommerce.abhijitrabidas.live",
+      github: "https://github.com/souravghoshofficial/microdome",
+      demo: "https://www.microdomeclasses.in/",
       category: "fullstack",
     },
     {
