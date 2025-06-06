@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import ProjectThumbnail from "./assets/images/thumnail2.png";
+import Portfolio from "./assets/images/portfolio.png";
 import DummyProjectTh from "./assets/images/dummy.png";
 import microdome from "./assets/images/microdome.png";
 
@@ -9,11 +9,11 @@ function Projects() {
 
   const projects = [
     {
-      pimage: ProjectThumbnail,
+      pimage: Portfolio,
       title: "Portfolio Website",
       description:
         "Modern responsive portfolio built with React and Tailwind CSS",
-      tags: ["React", "Tailwind CSS", "Vite", "Responsive"],
+      tags: ["React", "Tailwind CSS", "Vite", "Node.js"],
       github: "https://github.com/Abhijit-Rabidas/Portfolio-Website",
       demo: "https://www.abhijitrabidas.live",
       category: "web",
@@ -22,7 +22,7 @@ function Projects() {
       pimage: microdome,
       title: "Microdome",
       description:
-        "Full-stack e-commerce solution with React, Node.js, and MongoDB",
+        "An online coaching website for entrance exams and semester batches, offering structured courses and study materials",
       tags: ["React", "Node.js", "MongoDB", "Redux"],
       github: "https://github.com/souravghoshofficial/microdome",
       demo: "https://www.microdomeclasses.in/",
