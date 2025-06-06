@@ -1,10 +1,72 @@
-import dotenv from "dotenv";
-dotenv.config({ path: ".env" });
+const express = require("express");
+const nodemailer = require("nodemailer");
+const cors = require("cors");
+require("dotenv").config();
 
-import { app } from "./app.js";
+const app = express();
 
-const port = process.env.PORT || 3000;
+// app.use(
+//   cors({
+//     origin: process.env.CORS_ORIGIN,
+//     credentials: true,
+//   })
+// );
+app.use(cors());
 
-app.listen(port, () => {
-  console.log(`Server is listening on http://localhost:${port}`);
+app.use(
+  express.json({
+    limit: "16kb",
+  })
+);
+
+app.use(
+  express.urlencoded({
+    extended: true,
+    limit: "16kb",
+  })
+);
+
+app.use(express.static("public"));
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
 });
+
+app.get("/", (req, res) => {
+  res.send("Server is running fine !!!");
+});
+
+app.post("/send-email", async (req, res) => {
+  const { name, email, message } = req.body;
+
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_USER,
+    subject: `New Contact from ${name}`,
+    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+    html: `
+      <h3>New Contact Form Submission</h3>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message}</p>
+    `,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ success: true, message: "Email sent successfully" });
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).json({ success: false, message: "Failed to send email" });
+  }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
+);

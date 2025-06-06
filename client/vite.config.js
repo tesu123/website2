@@ -5,16 +5,9 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-
-  // new code
   server: {
     proxy: {
-      "/api": {
-        target: "https://abhijit-chi.vercel.app/",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
+      "/api": "http://localhost:3001",
     },
   },
-  // new code
 });

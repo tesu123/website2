@@ -302,6 +302,8 @@ import { FiMapPin, FiPhone, FiMail, FiSend } from "react-icons/fi";
 import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+const ApiUrl = import.meta.env.VITE_BACKEND_URL;
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -319,7 +321,7 @@ function Contact() {
     setStatus("sending");
 
     try {
-      const response = await fetch("http://localhost:3001/send-email", {
+      const response = await fetch(`${ApiUrl}/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
