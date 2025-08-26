@@ -48,7 +48,7 @@ function Navbar() {
     <nav
       className={`fixed w-full top-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm"
+          ? "bg-gradient-to-br from-gray-900/90 via-gray-800/90 to-black/90 backdrop-blur-md shadow-md"
           : "bg-transparent"
       }`}
     >
@@ -58,7 +58,7 @@ function Navbar() {
           <div className="flex items-center">
             <a
               href="#home"
-              className="text-2xl font-bold bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent drop-shadow-md"
             >
               Abhijit R.
             </a>
@@ -72,28 +72,28 @@ function Navbar() {
                 href={`#${link.id}`}
                 className={`relative px-4 py-2 rounded-lg transition-all duration-300 ${
                   activeSection === link.id
-                    ? "text-emerald-600 dark:text-emerald-400 font-medium"
-                    : "text-gray-700 hover:text-emerald-500 dark:text-gray-300 dark:hover:text-emerald-400"
+                    ? "text-blue-400 font-medium"
+                    : "text-gray-300 hover:text-blue-400"
                 }`}
               >
                 {link.label}
                 {activeSection === link.id && (
-                  <span className="absolute left-0 bottom-0 w-full h-0.5 bg-emerald-500 transition-all duration-300"></span>
+                  <span className="absolute left-0 bottom-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300"></span>
                 )}
               </a>
             ))}
 
             {/* Social Icons for Desktop */}
-            <div className="ml-6 flex space-x-8">
+            <div className="ml-6 flex space-x-6">
               {socialLinks.map((social) => (
                 <a
                   key={social.icon}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300"
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-xl"
                 >
-                  <i className={`fab fa-${social.icon} text-xl`}></i>
+                  <i className={`fab fa-${social.icon}`}></i>
                 </a>
               ))}
             </div>
@@ -102,21 +102,21 @@ function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="md:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             aria-label="Toggle menu"
           >
             <div
-              className={`w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-gray-200 transition-all duration-300 ${
                 menuOpen ? "rotate-45 translate-y-1.5" : ""
               }`}
             ></div>
             <div
-              className={`w-6 h-0.5 bg-gray-800 dark:bg-white my-1.5 transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-gray-200 my-1.5 transition-all duration-300 ${
                 menuOpen ? "opacity-0" : ""
               }`}
             ></div>
             <div
-              className={`w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-gray-200 transition-all duration-300 ${
                 menuOpen ? "-rotate-45 -translate-y-1.5" : ""
               }`}
             ></div>
@@ -129,7 +129,7 @@ function Navbar() {
             menuOpen ? "max-h-96" : "max-h-0"
           }`}
         >
-          <div className="pt-4 pb-8 space-y-2 bg-white dark:bg-gray-900 rounded-lg shadow-lg mt-2">
+          <div className="pt-4 pb-8 space-y-2 bg-gray-900/90 backdrop-blur-md rounded-lg shadow-xl mt-2 border border-gray-700">
             {navLinks.map((link) => (
               <a
                 key={link.id}
@@ -137,8 +137,8 @@ function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className={`block px-4 py-3 rounded-lg transition-colors duration-300 ${
                   activeSection === link.id
-                    ? "bg-emerald-100 dark:bg-gray-700 text-emerald-600 dark:text-emerald-400"
-                    : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
+                    ? "bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-400"
+                    : "text-gray-300 hover:bg-white/5 hover:text-blue-400"
                 }`}
               >
                 {link.label}
@@ -146,7 +146,7 @@ function Navbar() {
             ))}
 
             {/* Divider */}
-            <hr className="border-t border-gray-200 dark:border-gray-700 mx-4 my-4" />
+            <hr className="border-t border-gray-700 mx-4 my-4" />
 
             {/* Social Icons for Mobile */}
             <div className="flex justify-center space-x-8 pt-2">
@@ -156,7 +156,7 @@ function Navbar() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-emerald-500 dark:text-gray-400 dark:hover:text-emerald-400 transition-colors duration-300 text-2xl"
+                  className="text-gray-400 hover:text-blue-400 transition-colors duration-300 text-2xl"
                 >
                   <i className={`fab fa-${social.icon}`}></i>
                 </a>

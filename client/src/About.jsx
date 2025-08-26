@@ -6,7 +6,6 @@ import {
   FaCode,
   FaLightbulb,
 } from "react-icons/fa";
-
 import image from "./assets/images/image.png";
 
 function About() {
@@ -14,47 +13,28 @@ function About() {
 
   return (
     <section
-      className="relative py-20 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 overflow-hidden"
       id="about"
+      className="relative py-10 min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-200 overflow-hidden"
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 z-0">
-        {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-r from-emerald-500/10 to-blue-500/10"
-            style={{
-              width: `${Math.random() * 200 + 100}px`,
-              height: `${Math.random() * 200 + 100}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animation: `float ${6 + Math.random() * 6}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
-              opacity: 0.05 + Math.random() * 0.05,
-              filter: "blur(40px)",
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating background shapes (like Hero) */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-64 -right-32 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Heading */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1 text-sm font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-gray-800 rounded-full mb-4">
-            GET TO KNOW ME
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+        <div className="text-center mb-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
             About{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
               Me
             </span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
         </div>
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-white dark:bg-gray-800 rounded-full p-1 shadow-md">
+          <div className="inline-flex bg-white/5 backdrop-blur-md rounded-full p-1 border border-gray-700 shadow-md">
             {[
               {
                 id: "about",
@@ -77,8 +57,8 @@ function About() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center px-6 py-2 rounded-full transition-all duration-300 ${
                   activeTab === tab.id
-                    ? "bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg"
-                    : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
+                    : "text-gray-300 hover:bg-white/10"
                 }`}
               >
                 {tab.icon}
@@ -89,58 +69,40 @@ function About() {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+        <div className="bg-white/5 backdrop-blur-md border border-gray-700 rounded-2xl shadow-xl overflow-hidden">
           {activeTab === "about" && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              {/* Personal Introduction */}
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              {/* Personal Info */}
               <div className="p-10">
                 <div className="flex items-center mb-8">
-                  <div className="bg-gradient-to-r from-emerald-500 to-teal-600 p-3 rounded-full mr-4 text-white">
+                  <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-full mr-4 text-white">
                     <FaUser className="h-6 w-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                  <h3 className="text-2xl font-bold text-white">
                     Personal Info
                   </h3>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Full Name
-                    </p>
-                    <p className="font-medium text-gray-800 dark:text-white">
-                      Abhijit Rabidas
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Location
-                    </p>
-                    <p className="font-medium text-gray-800 dark:text-white">
-                      Haldibari, India
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Phone No
-                    </p>
-                    <p className="font-medium text-gray-800 dark:text-white">
-                      7679489050
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Education
-                    </p>
-                    <p className="font-medium text-gray-800 dark:text-white">
-                      MCA @ Jadavpur Univ.
-                    </p>
-                  </div>
+                  {[
+                    { label: "Full Name", value: "Abhijit Rabidas" },
+                    { label: "Location", value: "Haldibari, India" },
+                    { label: "Phone No", value: "7679489050" },
+                    { label: "Education", value: "MCA @ Jadavpur Univ." },
+                  ].map((info, i) => (
+                    <div
+                      key={i}
+                      className="bg-white/5 border border-gray-700 p-4 rounded-lg"
+                    >
+                      <p className="text-sm text-gray-400">{info.label}</p>
+                      <p className="font-medium text-white">{info.value}</p>
+                    </div>
+                  ))}
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                <p className="text-gray-300 leading-relaxed mb-6">
                   Hello! I'm{" "}
-                  <span className="font-semibold text-emerald-600 dark:text-emerald-400">
+                  <span className="font-semibold text-blue-400">
                     Abhijit Rabidas
                   </span>
                   , a passionate software developer currently pursuing my Master
@@ -150,54 +112,44 @@ function About() {
                   scalable solutions.
                 </p>
 
-                <div className="flex items-center bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-lg border-l-4 border-emerald-500">
-                  <FaLightbulb className="text-emerald-500 mr-3 text-xl" />
-                  <p className="text-gray-700 dark:text-gray-300">
+                <div className="flex items-center bg-blue-900/20 p-4 rounded-lg border-l-4 border-blue-500">
+                  <FaLightbulb className="text-blue-400 mr-3 text-xl" />
+                  <p className="text-gray-300">
                     My approach blends analytical thinking with creative
                     problem-solving to deliver impactful digital experiences.
                   </p>
                 </div>
               </div>
 
-              {/* Image or Stats */}
-              <div className="bg-gray-50 dark:bg-gray-700 p-10 flex flex-col justify-center items-center">
+              {/* Profile Image + Stats */}
+              <div className="bg-white/5 border-l border-gray-700 p-10 flex flex-col justify-center items-center">
                 <div className="relative group mb-8">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500 animate-spin-slow"></div>
+                  <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-75"></div>
                   <div className="relative">
                     <img
                       src={image}
                       alt="Abhijit Rabidas"
-                      className="w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-gray-800 group-hover:border-transparent transition-all duration-500"
+                      className="w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover border-4 border-gray-800"
                     />
-                    <div className="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-white/10 transition-all duration-500"></div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 w-full">
-                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center">
-                    <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                      3+
-                    </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Projects
-                    </p>
-                  </div>
-                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center">
-                    <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                      0+
-                    </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Years Experience
-                    </p>
-                  </div>
-                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center">
-                    <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                      #61
-                    </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      WB JECA Rank
-                    </p>
-                  </div>
+                  {[
+                    { value: "3+", label: "Projects" },
+                    { value: "0+", label: "Years Experience" },
+                    { value: "#61", label: "WB JECA Rank" },
+                  ].map((stat, i) => (
+                    <div
+                      key={i}
+                      className="bg-white/5 border border-gray-700 p-4 rounded-lg shadow text-center"
+                    >
+                      <p className="text-2xl font-bold text-blue-400">
+                        {stat.value}
+                      </p>
+                      <p className="text-sm text-gray-400">{stat.label}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -206,90 +158,61 @@ function About() {
           {activeTab === "education" && (
             <div className="p-10">
               <div className="flex items-center mb-8">
-                <div className="bg-gradient-to-r from-emerald-500 to-teal-600 p-3 rounded-full mr-4 text-white">
+                <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-full mr-4 text-white">
                   <FaGraduationCap className="h-6 w-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                <h3 className="text-2xl font-bold text-white">
                   Education & Achievements
                 </h3>
               </div>
 
               <div className="space-y-8">
-                {/* MCA */}
-                <div className="relative pl-12">
-                  <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-emerald-500 to-teal-600"></div>
-                  <div className="absolute -left-1 top-0 w-6 h-6 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center text-white">
-                    <FaGraduationCap className="h-3 w-3" />
-                  </div>
-                  <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <div className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 mb-1">
-                          2024 - 2026
+                {[
+                  {
+                    year: "2024 - 2026",
+                    title: "Master of Computer Applications",
+                    place: "Jadavpur University",
+                    current: true,
+                    icon: <FaGraduationCap />,
+                  },
+                  {
+                    year: "2020 - 2023",
+                    title: "BSc Computer Science (Hons)",
+                    place: "Ananda Chandra College, University of North Bengal",
+                    icon: <FaGraduationCap />,
+                  },
+                  {
+                    year: "2024",
+                    title: "WB JECA Rank 61",
+                    place: "West Bengal Joint Entrance for MCA",
+                    icon: <FaAward />,
+                  },
+                ].map((edu, i) => (
+                  <div key={i} className="relative pl-12">
+                    <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-blue-500 to-purple-600"></div>
+                    <div className="absolute -left-1 top-0 w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white">
+                      {edu.icon}
+                    </div>
+                    <div className="bg-white/5 border border-gray-700 p-6 rounded-xl hover:shadow-lg transition">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <div className="text-sm font-semibold text-blue-400 mb-1">
+                            {edu.year}
+                          </div>
+                          <h4 className="text-xl font-bold text-white">
+                            {edu.title}
+                          </h4>
+                          <p className="text-gray-400">{edu.place}</p>
                         </div>
-                        <h4 className="text-xl font-bold text-gray-800 dark:text-white">
-                          Master of Computer Applications
-                        </h4>
-                        <p className="text-gray-600 dark:text-gray-400">
-                          Jadavpur University
-                        </p>
+                        {edu.current && (
+                          <span className="px-3 py-1 text-xs font-semibold bg-blue-500/20 text-blue-400 rounded-full">
+                            Current
+                          </span>
+                        )}
                       </div>
-                      <span className="px-3 py-1 text-xs font-semibold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-400 rounded-full">
-                        Current
-                      </span>
                     </div>
-                    {/* <p className="mt-3 text-gray-600 dark:text-gray-300">
-                      Specializing in advanced algorithms, machine learning, and
-                      full-stack development.
-                    </p> */}
                   </div>
-                </div>
-
-                {/* BSc */}
-                <div className="relative pl-12">
-                  <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-emerald-500 to-teal-600"></div>
-                  <div className="absolute -left-1 top-0 w-6 h-6 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center text-white">
-                    <FaGraduationCap className="h-3 w-3" />
-                  </div>
-                  <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 mb-1">
-                      2020 - 2023
-                    </div>
-                    <h4 className="text-xl font-bold text-gray-800 dark:text-white">
-                      BSc Computer Science (Hons)
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      Ananda Chandra College, University of North Bengal
-                    </p>
-                    {/* <p className="mt-3 text-gray-600 dark:text-gray-300">
-                      Graduated with honors, focusing on core computer science
-                      concepts and software development.
-                    </p> */}
-                  </div>
-                </div>
-
-                {/* Achievement */}
-                <div className="relative pl-12">
-                  <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-emerald-500 to-teal-600"></div>
-                  <div className="absolute -left-1 top-0 w-6 h-6 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center text-white">
-                    <FaAward className="h-3 w-3" />
-                  </div>
-                  <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 mb-1">
-                      2024
-                    </div>
-                    <h4 className="text-xl font-bold text-gray-800 dark:text-white">
-                      WB JECA Rank 61
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      West Bengal Joint Entrance for MCA
-                    </p>
-                    {/* <p className="mt-3 text-gray-600 dark:text-gray-300">
-                      Secured All India Rank 61 among thousands of candidates in
-                      the competitive MCA entrance examination.
-                    </p> */}
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           )}
@@ -297,10 +220,10 @@ function About() {
           {activeTab === "skills" && (
             <div className="p-10">
               <div className="flex items-center mb-8">
-                <div className="bg-gradient-to-r from-emerald-500 to-teal-600 p-3 rounded-full mr-4 text-white">
+                <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-full mr-4 text-white">
                   <FaCode className="h-6 w-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                <h3 className="text-2xl font-bold text-white">
                   Technical Skills
                 </h3>
               </div>
@@ -334,22 +257,22 @@ function About() {
                       "VS Code",
                       "Vercel",
                       "Matlab",
-                      "Linux",
+                      "Postman",
                     ],
                   },
                 ].map((skillGroup, index) => (
                   <div
                     key={index}
-                    className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                    className="bg-white/5 border border-gray-700 p-6 rounded-xl hover:shadow-lg transition"
                   >
-                    <h4 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">
+                    <h4 className="text-lg font-semibold text-white mb-4">
                       {skillGroup.category}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {skillGroup.skills.map((skill, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 text-sm bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full shadow-sm border border-gray-200 dark:border-gray-600"
+                          className="px-3 py-1 text-sm bg-gray-800 text-gray-200 rounded-full border border-gray-700 hover:border-blue-500/50 transition"
                         >
                           {skill}
                         </span>
@@ -367,3 +290,9 @@ function About() {
 }
 
 export default About;
+
+// function About() {
+//   return <h1>hello</h1>;
+// }
+
+// export default About;
