@@ -9,73 +9,61 @@ import {
 
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Gradient background elements */}
-      <div className="absolute inset-0 z-0">
-        {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-gradient-to-r from-blue-600/10 to-purple-600/10"
-            style={{
-              width: `${Math.random() * 300 + 100}px`,
-              height: `${Math.random() * 300 + 100}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              filter: "blur(60px)",
-              opacity: 0.1,
-            }}
-          />
-        ))}
-      </div>
+    <footer className="relative bg-gradient-to-br from-black via-gray-900 to-gray-950 text-gray-300 py-16 px-6 overflow-hidden">
+      {/* Floating glowing orbs */}
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 -right-20 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* About Section */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-12 after:h-0.5 after:bg-blue-500">
-              About Me
+          <div className="space-y-5">
+            <h3 className="text-xl font-bold text-white">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                About Me
+              </span>
             </h3>
             <p className="text-gray-400 leading-relaxed">
-              I'm Abhijit Rabidas, a passionate software developer specializing
-              in creating innovative digital solutions. Currently pursuing my
-              Master's in Computer Applications at Jadavpur University.
+              I'm Abhijit Rabidas, a passionate software developer crafting
+              digital solutions with code & creativity. Currently pursuing MCA
+              at Jadavpur University.
             </p>
-            <div className="pt-2">
-              <a
-                href="mailto:ajdas123.ff@gmail.com"
-                className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 hover:from-blue-300 hover:to-purple-300 transition-all flex items-center"
+            <a
+              href="mailto:ajdas123.ff@gmail.com"
+              className="inline-flex items-center text-gray-300 hover:text-blue-400 transition"
+            >
+              <svg
+                className="w-5 h-5 mr-2 text-blue-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  className="w-5 h-5 mr-2 text-blue-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path>
-                </svg>
-                ajdas123.ff@gmail.com
-              </a>
-            </div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              ajdas123.ff@gmail.com
+            </a>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-12 after:h-0.5 after:bg-blue-500">
-              Quick Links
+          <div className="space-y-5">
+            <h3 className="text-xl font-bold text-white">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Quick Links
+              </span>
             </h3>
             <ul className="space-y-3">
               {["home", "about", "projects", "contact"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item}`}
-                    className="text-gray-400 hover:text-white transition-colors flex items-center group"
+                    className="group flex items-center text-gray-400 hover:text-white transition"
                   >
-                    <span className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                    <span className="w-2 h-2 mr-3 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-all"></span>
                     {item.charAt(0).toUpperCase() + item.slice(1)}
                   </a>
                 </li>
@@ -84,14 +72,16 @@ function Footer() {
           </div>
 
           {/* Social Links */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-12 after:h-0.5 after:bg-blue-500">
-              Connect With Me
+          <div className="space-y-5">
+            <h3 className="text-xl font-bold text-white">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Connect
+              </span>
             </h3>
             <p className="text-gray-400">
-              Feel free to reach out through any of these platforms:
+              Let’s connect & build something cool 🚀
             </p>
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex gap-4 pt-2">
               {[
                 {
                   icon: <FaGithub />,
@@ -110,14 +100,14 @@ function Footer() {
                   label: "Instagram",
                 },
                 { icon: <FaFacebookF />, url: "#", label: "Facebook" },
-              ].map((social, index) => (
+              ].map((social, i) => (
                 <a
-                  key={index}
+                  key={i}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-gradient-to-r from-blue-500 to-purple-600 transition-all"
                   aria-label={social.label}
+                  className="w-11 h-11 flex items-center justify-center rounded-full bg-gray-800 text-gray-300 hover:bg-gradient-to-r from-blue-500 to-purple-600 hover:text-white shadow-md transition transform hover:scale-110"
                 >
                   {social.icon}
                 </a>
@@ -126,14 +116,17 @@ function Footer() {
           </div>
         </div>
 
-        {/* Copyright Section */}
-        <div className="border-t border-gray-800 pt-8 mt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} Abhijit Rabidas. All rights
-              reserved.
-            </p>
-          </div>
+        {/* Divider */}
+        <div className="border-t border-gray-800 pt-6 mt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+          <p>
+            © {new Date().getFullYear()} Abhijit Rabidas. All rights reserved.
+          </p>
+          <p className="mt-3 md:mt-0">
+            Designed with ❤️ in{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+              React & Tailwind
+            </span>
+          </p>
         </div>
       </div>
     </footer>

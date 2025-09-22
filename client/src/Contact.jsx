@@ -58,47 +58,41 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-10 min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden"
+      className="relative py-20 min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden"
     >
-      {/* Floating Background Shapes */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
-      <div className="absolute top-64 -right-32 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
+      {/* Cyber Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px] animate-pulse"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
         {/* Section Heading */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">
-            Contact{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
-              Me
-            </span>
+        <div className="text-center mb-14">
+          <h2 className="text-5xl font-extrabold tracking-widest text-white">
+            <span className="text-cyan-400">{"<"}</span>
+            Contact
+            <span className="text-purple-400">{"/>"}</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+          <p className="mt-4 text-gray-400">Let’s build something amazing together ✨</p>
         </div>
 
         {/* Contact Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl shadow-xl p-10 border border-gray-700 hover:shadow-2xl transition duration-500">
-            <h3 className="text-2xl font-bold text-white mb-8">
-              Contact Information
-            </h3>
+          <div className="bg-gray-900/80 border border-gray-700 rounded-2xl p-10 shadow-lg hover:shadow-[0_0_25px_rgba(0,255,255,0.6)] transition-all duration-500">
+            <h3 className="text-2xl font-bold text-white mb-8">Get in Touch</h3>
 
             <div className="space-y-6">
               {/* Address */}
               <div className="flex items-start">
-                <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-full mr-6 text-white shadow-lg">
+                <div className="bg-gradient-to-r from-cyan-400 to-purple-500 p-3 rounded-full mr-6 text-black shadow-lg">
                   <FiMapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white mb-1">
-                    Location
-                  </h4>
+                  <h4 className="text-lg font-semibold text-white mb-1">Location</h4>
                   <a
                     href="https://www.google.com/maps/place/147,+Ananda+Pally,+Bapuji+Nagar,+Jadavpur,+Kolkata,+West+Bengal+700092/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-blue-400 transition"
+                    className="text-gray-400 hover:text-cyan-400 transition"
                   >
                     Jadavpur, Kolkata, West Bengal
                   </a>
@@ -107,16 +101,14 @@ function Contact() {
 
               {/* Phone */}
               <div className="flex items-start">
-                <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-full mr-6 text-white shadow-lg">
+                <div className="bg-gradient-to-r from-cyan-400 to-purple-500 p-3 rounded-full mr-6 text-black shadow-lg">
                   <FiPhone className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white mb-1">
-                    Phone
-                  </h4>
+                  <h4 className="text-lg font-semibold text-white mb-1">Phone</h4>
                   <a
                     href="tel:+917679489050"
-                    className="text-gray-300 hover:text-blue-400 transition"
+                    className="text-gray-400 hover:text-cyan-400 transition"
                   >
                     +91 7679489050
                   </a>
@@ -125,16 +117,14 @@ function Contact() {
 
               {/* Email */}
               <div className="flex items-start">
-                <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-full mr-6 text-white shadow-lg">
+                <div className="bg-gradient-to-r from-cyan-400 to-purple-500 p-3 rounded-full mr-6 text-black shadow-lg">
                   <FiMail className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white mb-1">
-                    Email
-                  </h4>
+                  <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
                   <a
                     href="mailto:ajdas123.ff@gmail.com"
-                    className="text-gray-300 hover:text-blue-400 transition"
+                    className="text-gray-400 hover:text-cyan-400 transition"
                   >
                     ajdas123.ff@gmail.com
                   </a>
@@ -143,9 +133,7 @@ function Contact() {
 
               {/* Social Links */}
               <div className="pt-4">
-                <h4 className="text-lg font-semibold text-white mb-4">
-                  Connect With Me
-                </h4>
+                <h4 className="text-lg font-semibold text-white mb-4">Connect with me</h4>
                 <div className="flex space-x-6">
                   {socialLinks.map((social, index) => (
                     <a
@@ -153,7 +141,7 @@ function Contact() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`text-2xl text-gray-400 ${social.color} transition transform hover:scale-125`}
+                      className={`text-2xl text-gray-400 ${social.color} transition transform hover:scale-125 hover:shadow-[0_0_20px_rgba(0,255,255,0.7)]`}
                     >
                       {social.icon}
                     </a>
@@ -164,10 +152,8 @@ function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl shadow-xl p-10 border border-gray-700 hover:shadow-2xl transition duration-500">
-            <h3 className="text-2xl font-bold text-white mb-8">
-              Send Me a Message
-            </h3>
+          <div className="bg-gray-900/80 border border-gray-700 rounded-2xl p-10 shadow-lg hover:shadow-[0_0_25px_rgba(200,0,255,0.6)] transition-all duration-500">
+            <h3 className="text-2xl font-bold text-white mb-8">Send a Message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
@@ -175,7 +161,7 @@ function Contact() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-800 text-white placeholder-gray-400"
+                className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-black/60 text-white placeholder-gray-500 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
                 placeholder="Your Name"
                 required
               />
@@ -184,7 +170,7 @@ function Contact() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-800 text-white placeholder-gray-400"
+                className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-black/60 text-white placeholder-gray-500 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
                 placeholder="Your Email"
                 required
               />
@@ -193,7 +179,7 @@ function Contact() {
                 rows="5"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-gray-800 text-white placeholder-gray-400"
+                className="w-full px-4 py-3 rounded-lg border border-gray-700 bg-black/60 text-white placeholder-gray-500 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
                 placeholder="Your Message"
                 required
               ></textarea>
@@ -202,14 +188,16 @@ function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className={`w-full flex justify-center items-center px-6 py-3 font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition duration-500 hover:shadow-xl cursor-pointer ${
-                  status === "sending" ? "opacity-70 cursor-not-allowed" : ""
+                className={`w-full flex justify-center items-center px-6 py-3 font-bold rounded-lg border transition-all duration-500 ${
+                  status === "sending"
+                    ? "bg-gray-800 text-gray-500 cursor-not-allowed"
+                    : "border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black shadow-[0_0_15px_rgba(0,255,255,0.6)] hover:shadow-[0_0_25px_rgba(0,255,255,1)]"
                 }`}
               >
                 {status === "sending" ? (
                   <>
                     <svg
-                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-cyan-400"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -240,14 +228,13 @@ function Contact() {
 
               {/* Status Messages */}
               {status === "success" && (
-                <div className="mt-4 p-4 bg-blue-900/30 text-blue-300 rounded-lg border border-blue-700">
-                  Message sent successfully! I'll get back to you soon.
+                <div className="mt-4 p-4 bg-cyan-900/30 text-cyan-300 rounded-lg border border-cyan-700">
+                  ✅ Message sent successfully! I’ll get back to you soon.
                 </div>
               )}
               {status === "error" && (
                 <div className="mt-4 p-4 bg-red-900/30 text-red-400 rounded-lg border border-red-700">
-                  Failed to send message. Please try again later or email me
-                  directly at ajdas123.ff@gmail.com.
+                  ❌ Failed to send message. Try again later or email me directly.
                 </div>
               )}
             </form>

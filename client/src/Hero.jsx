@@ -6,10 +6,10 @@ import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 function Hero() {
   const [dynamicText, setDynamicText] = useState("");
   const phrases = [
-    "Web Developer",
-    "MCA Student @ JU",
-    "Tech Enthusiast",
-    "Problem Solver",
+    "⚡ Web Developer",
+    "🎓 MCA Student @ JU",
+    "🚀 Tech Enthusiast",
+    "🧩 Problem Solver",
   ];
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -54,30 +54,28 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-black"
+      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center px-6 bg-gradient-to-br from-black via-gray-900 to-black text-white font-mono"
     >
-      {/* Floating background shapes */}
-      <div className="absolute -top-20 -left-20 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"></div>
-      <div className="absolute top-40 -right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
+      {/* Animated background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] animate-pulse"></div>
 
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 py-20">
           {/* Text content */}
-          <div className="text-center lg:text-left max-w-2xl bg-white/5 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-gray-700 hover:shadow-2xl transition duration-500">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
-              Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                Abhijit Rabidas
-              </span>
+          <div className="text-center lg:text-left max-w-2xl p-8">
+            <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-4 tracking-widest">
+              <span className="text-cyan-400">{"<"}</span>
+              Abhijit Rabidas
+              <span className="text-purple-400">{"/>"}</span>
             </h1>
 
             <div className="h-16 sm:h-20 mb-6">
-              <p className="text-xl sm:text-2xl md:text-3xl text-gray-200 font-medium">
-                {`I'm a `}
-                <span className="text-blue-400">
+              <p className="text-xl sm:text-2xl md:text-3xl text-gray-200 font-semibold tracking-wide">
+                {`> `}
+                <span className="text-cyan-400">
                   {dynamicText}
                   <span
-                    className={`inline-block w-[2px] h-[1.2em] bg-blue-400 ml-1 ${
+                    className={`inline-block w-[8px] h-[1.2em] bg-purple-400 ml-1 ${
                       showCursor ? "opacity-100" : "opacity-0"
                     }`}
                   ></span>
@@ -85,36 +83,36 @@ function Hero() {
               </p>
             </div>
 
-            <p className="text-lg text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              Crafting digital experiences with clean code and creative
-              solutions. Currently mastering computer applications while
-              building innovative projects.
+            <p className="text-lg text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+              Welcome to my dev world 🌍. I love solving problems, building
+              futuristic web apps, and leveling up my coding journey one commit
+              at a time.
             </p>
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
                 href="#contact"
-                className="px-6 py-3 font-medium rounded-lg shadow-lg text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition duration-500 text-center"
+                className="px-6 py-3 font-bold rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition duration-500 shadow-[0_0_10px_rgba(0,255,255,0.6)] hover:shadow-[0_0_20px_rgba(0,255,255,1)] text-center"
               >
-                Contact Me
+                ⚔ Contact Me
               </a>
               <a
                 href={resume}
                 download="Abhijit_Rabidas_Resume.pdf"
-                className="px-6 py-3 border border-gray-600 text-gray-300 font-medium rounded-lg hover:bg-white/5 transition duration-500 text-center"
+                className="px-6 py-3 font-bold rounded-lg border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-black transition duration-500 shadow-[0_0_10px_rgba(200,0,255,0.6)] hover:shadow-[0_0_20px_rgba(200,0,255,1)] text-center"
               >
-                Download Resume
+                🎮 Download Resume
               </a>
             </div>
 
             {/* Social links */}
-            <div className="flex justify-center lg:justify-start gap-8 mt-8">
+            <div className="flex justify-center lg:justify-start gap-8 mt-10">
               <a
                 href="https://www.linkedin.com/in/abhijit-rabidas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl text-gray-400 hover:text-blue-400 transition transform hover:scale-125"
+                className="text-3xl text-gray-400 hover:text-cyan-400 transition transform hover:scale-125"
               >
                 <FaLinkedin />
               </a>
@@ -122,7 +120,7 @@ function Hero() {
                 href="https://github.com/Abhijit-Rabidas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl text-gray-400 hover:text-gray-200 transition transform hover:scale-125"
+                className="text-3xl text-gray-400 hover:text-white transition transform hover:scale-125"
               >
                 <FaGithub />
               </a>
@@ -130,23 +128,23 @@ function Hero() {
                 href="https://www.instagram.com/aj_das_01"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl text-gray-400 hover:text-pink-400 transition transform hover:scale-125"
+                className="text-3xl text-gray-400 hover:text-pink-400 transition transform hover:scale-125"
               >
                 <FaInstagram />
               </a>
             </div>
           </div>
 
-          {/* Profile image */}
-          <div className="relative bg-white/5 backdrop-blur-md p-4 rounded-full border border-gray-700 shadow-2xl hover:shadow-blue-500/20 transition duration-500">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden">
+          {/* Profile image with glowing ring */}
+          <div className="relative group">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 blur-2xl opacity-60 group-hover:opacity-90 transition duration-700 animate-pulse"></div>
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-gray-800 shadow-[0_0_25px_rgba(0,255,255,0.5)] group-hover:shadow-[0_0_50px_rgba(200,0,255,0.9)] transition duration-700">
               <img
                 src={img}
                 alt="Abhijit Rabidas"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute inset-0 rounded-full border-4 border-blue-500/30"></div>
           </div>
         </div>
       </div>
