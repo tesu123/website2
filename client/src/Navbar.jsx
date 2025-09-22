@@ -6,9 +6,7 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,18 +38,21 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full top-0 z-50 transition-all duration-500 ${
+      className={`fixed w-full top-0 z-50 font-mono text-sm transition-all duration-500 ${
         isScrolled
-          ? "bg-gradient-to-r from-black/90 via-gray-900/90 to-black/90 backdrop-blur-md shadow-[0_0_20px_rgba(0,255,255,0.4)]"
+          ? "bg-gradient-to-r from-black/95 via-gray-900/95 to-black/95 backdrop-blur-md border-b border-cyan-400/20 shadow-[0_0_20px_rgba(0,255,255,0.4)]"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-3">
+      <div className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           {/* Brand Logo */}
           <a
             href="#home"
-            className="text-2xl font-extrabold tracking-widest bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(0,255,255,0.7)] hover:scale-110 transition-transform duration-300"
+            className="text-2xl sm:text-3xl font-extrabold tracking-widest 
+              bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent
+              drop-shadow-[0_0_15px_rgba(0,255,255,0.7)] hover:scale-110 
+              transition-transform duration-300"
           >
             {"</> Abhijit"}
           </a>
@@ -62,15 +63,18 @@ function Navbar() {
               <a
                 key={link.id}
                 href={`#${link.id}`}
-                className={`relative px-4 py-2 font-semibold transition-all duration-300 ${
+                className={`relative px-4 py-2 font-semibold tracking-wide transition-all duration-300 ${
                   activeSection === link.id
-                    ? "text-cyan-400"
+                    ? "text-cyan-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.9)]"
                     : "text-gray-300 hover:text-purple-400"
                 }`}
               >
                 {link.label}
                 {activeSection === link.id && (
-                  <span className="absolute left-0 bottom-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 shadow-[0_0_10px_rgba(0,255,255,0.8)] animate-pulse"></span>
+                  <span className="absolute left-0 bottom-0 w-full h-0.5 
+                    bg-gradient-to-r from-cyan-400 to-purple-500 
+                    shadow-[0_0_15px_rgba(0,255,255,0.8)] animate-pulse"
+                  ></span>
                 )}
               </a>
             ))}
@@ -81,7 +85,8 @@ function Navbar() {
                 href="https://github.com/Abhijit-Rabidas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white text-xl transition transform hover:scale-125 hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.9)]"
+                className="text-gray-400 hover:text-gray-200 text-xl transition 
+                  transform hover:scale-125 hover:shadow-[0_0_20px_rgba(255,255,255,0.9)]"
               >
                 <FaGithub />
               </a>
@@ -89,7 +94,8 @@ function Navbar() {
                 href="https://www.linkedin.com/in/abhijit-rabidas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 text-xl transition transform hover:scale-125 hover:drop-shadow-[0_0_15px_rgba(0,255,255,0.9)]"
+                className="text-gray-400 hover:text-cyan-400 text-xl transition 
+                  transform hover:scale-125 hover:shadow-[0_0_20px_rgba(0,255,255,0.9)]"
               >
                 <FaLinkedin />
               </a>
@@ -97,7 +103,8 @@ function Navbar() {
                 href="https://www.instagram.com/aj_das_01"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-pink-400 text-xl transition transform hover:scale-125 hover:drop-shadow-[0_0_15px_rgba(255,0,150,0.9)]"
+                className="text-gray-400 hover:text-pink-400 text-xl transition 
+                  transform hover:scale-125 hover:shadow-[0_0_20px_rgba(255,0,150,0.9)]"
               >
                 <FaInstagram />
               </a>
@@ -134,17 +141,21 @@ function Navbar() {
             menuOpen ? "max-h-96" : "max-h-0"
           }`}
         >
-          <div className="pt-4 pb-6 space-y-2 bg-black/90 rounded-lg shadow-[0_0_20px_rgba(200,0,255,0.6)] border border-gray-700 mt-3">
+          <div className="pt-4 pb-6 space-y-2 
+            bg-gray-900/90 rounded-lg border border-gray-700 
+            shadow-[0_0_25px_rgba(200,0,255,0.6)] mt-3"
+          >
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={() => setMenuOpen(false)}
-                className={`block px-6 py-3 font-semibold text-lg transition-all duration-300 ${
-                  activeSection === link.id
-                    ? "text-cyan-400 bg-gradient-to-r from-cyan-400/10 to-purple-500/10"
-                    : "text-gray-300 hover:text-purple-400 hover:bg-white/5"
-                }`}
+                className={`block px-6 py-3 font-semibold text-lg tracking-wide 
+                  transition-all duration-300 ${
+                    activeSection === link.id
+                      ? "text-cyan-400 bg-gradient-to-r from-cyan-400/10 to-purple-500/10"
+                      : "text-gray-300 hover:text-purple-400 hover:bg-white/5"
+                  }`}
               >
                 {link.label}
               </a>
@@ -156,7 +167,8 @@ function Navbar() {
                 href="https://github.com/Abhijit-Rabidas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white text-2xl transition transform hover:scale-125"
+                className="text-gray-400 hover:text-gray-200 text-2xl transition 
+                  transform hover:scale-125 hover:shadow-[0_0_20px_rgba(255,255,255,0.8)]"
               >
                 <FaGithub />
               </a>
@@ -164,7 +176,8 @@ function Navbar() {
                 href="https://www.linkedin.com/in/abhijit-rabidas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-cyan-400 text-2xl transition transform hover:scale-125"
+                className="text-gray-400 hover:text-cyan-400 text-2xl transition 
+                  transform hover:scale-125 hover:shadow-[0_0_20px_rgba(0,255,255,0.9)]"
               >
                 <FaLinkedin />
               </a>
@@ -172,7 +185,8 @@ function Navbar() {
                 href="https://www.instagram.com/aj_das_01"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-pink-400 text-2xl transition transform hover:scale-125"
+                className="text-gray-400 hover:text-pink-400 text-2xl transition 
+                  transform hover:scale-125 hover:shadow-[0_0_20px_rgba(255,0,150,0.9)]"
               >
                 <FaInstagram />
               </a>

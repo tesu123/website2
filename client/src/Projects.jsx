@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import Portfolio from "./assets/images/portfolioNew.png";
-import Monetrix from "./assets/images/monetrix.png";
-import microdome from "./assets/images/MicrodomeNew.png";
+import Portfolio from "./assets/images/portfolioNew.jpg";
+import Monetrix from "./assets/images/monetrix.jpg";
+import microdome from "./assets/images/MicrodomeNew.jpg";
 import DummyProjectTh from "./assets/images/dummy.png";
 
 function Projects() {
@@ -90,16 +90,12 @@ function Projects() {
 
       <div className="container mx-auto relative z-10">
         {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-5xl sm:text-6xl font-extrabold text-white mb-4 tracking-widest">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-widest">
             <span className="text-cyan-400">{"<"}</span>
             Projects
             <span className="text-purple-400">{"/>"}</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
-            Some of my recent works that showcase my skills, creativity, and
-            passion for building scalable apps.
-          </p>
         </div>
 
         {/* Filters */}
@@ -149,9 +145,66 @@ function Projects() {
   );
 }
 
+// const ProjectCard = ({ project }) => (
+//   <article className="group relative bg-gray-900/60 backdrop-blur-md border border-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,255,255,0.6)] hover:-translate-y-2 text-xs sm:text-sm">
+//     <div className="h-30 overflow-hidden relative">
+//       <img
+//         src={project.pimage}
+//         alt={project.title}
+//         className="w-full h- object-cover transition-transform duration-700 group-hover:scale-110"
+//         loading="lazy"
+//       />
+//       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+//     </div>
+
+//     <div className="p-6">
+//       <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+//         {project.title}
+//       </h3>
+//       <p className="text-gray-400 mb-4">{project.description}</p>
+
+//       <div className="flex flex-wrap gap-2 mb-4">
+//         {project.tags.map((tag, i) => (
+//           <span
+//             key={i}
+//             className="text-xs font-medium px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded-full"
+//           >
+//             {tag}
+//           </span>
+//         ))}
+//       </div>
+
+//       <div className="flex space-x-3">
+//         <a
+//           href={project.github}
+//           target="_blank"
+//           rel="noopener noreferrer"
+//           className="flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-gray-800 text-gray-200 hover:bg-gray-700 transition"
+//         >
+//           <FaGithub className="mr-2" /> Code
+//         </a>
+//         <a
+//           href={project.demo}
+//           target="_blank"
+//           rel="noopener noreferrer"
+//           className={`flex items-center px-4 py-2 text-sm font-medium rounded-lg transition ${
+//             project.demo === "#"
+//               ? "bg-gray-700 text-gray-500 cursor-not-allowed"
+//               : "bg-gradient-to-r from-cyan-400 to-purple-500 text-black hover:shadow-lg hover:shadow-purple-500/40"
+//           }`}
+//           onClick={(e) => project.demo === "#" && e.preventDefault()}
+//         >
+//           <FaExternalLinkAlt className="mr-2" /> Demo
+//         </a>
+//       </div>
+//     </div>
+//   </article>
+// );
+
 const ProjectCard = ({ project }) => (
-  <article className="group relative bg-gray-900/60 backdrop-blur-md border border-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,255,255,0.6)] hover:-translate-y-2">
-    <div className="h-48 overflow-hidden relative">
+  <article className="group relative bg-gray-900/60 backdrop-blur-md border border-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,255,255,0.6)] hover:-translate-y-2 text-xs sm:text-sm">
+    {/* Image Section */}
+    <div className="h-35 sm:h-60 overflow-hidden relative">
       <img
         src={project.pimage}
         alt={project.title}
@@ -161,6 +214,7 @@ const ProjectCard = ({ project }) => (
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     </div>
 
+    {/* Content */}
     <div className="p-6">
       <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
         {project.title}
@@ -204,5 +258,6 @@ const ProjectCard = ({ project }) => (
     </div>
   </article>
 );
+
 
 export default Projects;

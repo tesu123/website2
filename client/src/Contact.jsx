@@ -29,7 +29,10 @@ function Contact() {
 
       const data = await response.json();
       setStatus(data.success ? "success" : "error");
-      if (data.success) setFormData({ name: "", email: "", message: "" });
+
+      if (data.success) {
+        setFormData({ name: "", email: "", message: "" });
+      }
     } catch (err) {
       console.error("Error:", err);
       setStatus("error");
@@ -58,20 +61,19 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-20 min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden"
+      className="relative min-h-screen w-full overflow-hidden py-15 px-0 bg-gradient-to-br from-black via-gray-900 to-black text-white font-mono text-sm sm:text-"
     >
       {/* Cyber Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px] animate-pulse"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] animate-pulse"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Heading */}
-        <div className="text-center mb-14">
-          <h2 className="text-5xl font-extrabold tracking-widest text-white">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-widest">
             <span className="text-cyan-400">{"<"}</span>
             Contact
             <span className="text-purple-400">{"/>"}</span>
           </h2>
-          <p className="mt-4 text-gray-400">Let’s build something amazing together ✨</p>
         </div>
 
         {/* Contact Grid */}
@@ -87,7 +89,9 @@ function Contact() {
                   <FiMapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white mb-1">Location</h4>
+                  <h4 className="text-lg font-semibold text-white mb-1">
+                    Location
+                  </h4>
                   <a
                     href="https://www.google.com/maps/place/147,+Ananda+Pally,+Bapuji+Nagar,+Jadavpur,+Kolkata,+West+Bengal+700092/"
                     target="_blank"
@@ -105,7 +109,9 @@ function Contact() {
                   <FiPhone className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white mb-1">Phone</h4>
+                  <h4 className="text-lg font-semibold text-white mb-1">
+                    Phone
+                  </h4>
                   <a
                     href="tel:+917679489050"
                     className="text-gray-400 hover:text-cyan-400 transition"
@@ -121,7 +127,9 @@ function Contact() {
                   <FiMail className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
+                  <h4 className="text-lg font-semibold text-white mb-1">
+                    Email
+                  </h4>
                   <a
                     href="mailto:ajdas123.ff@gmail.com"
                     className="text-gray-400 hover:text-cyan-400 transition"
@@ -133,7 +141,9 @@ function Contact() {
 
               {/* Social Links */}
               <div className="pt-4">
-                <h4 className="text-lg font-semibold text-white mb-4">Connect with me</h4>
+                <h4 className="text-lg font-semibold text-white mb-4">
+                  Connect with me
+                </h4>
                 <div className="flex space-x-6">
                   {socialLinks.map((social, index) => (
                     <a
@@ -153,7 +163,9 @@ function Contact() {
 
           {/* Contact Form */}
           <div className="bg-gray-900/80 border border-gray-700 rounded-2xl p-10 shadow-lg hover:shadow-[0_0_25px_rgba(200,0,255,0.6)] transition-all duration-500">
-            <h3 className="text-2xl font-bold text-white mb-8">Send a Message</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">
+              Send a Message
+            </h3>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
@@ -234,7 +246,8 @@ function Contact() {
               )}
               {status === "error" && (
                 <div className="mt-4 p-4 bg-red-900/30 text-red-400 rounded-lg border border-red-700">
-                  ❌ Failed to send message. Try again later or email me directly.
+                  ❌ Failed to send message. Try again later or email me
+                  directly.
                 </div>
               )}
             </form>

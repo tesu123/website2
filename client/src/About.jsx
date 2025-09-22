@@ -14,27 +14,25 @@ function About() {
   return (
     <section
       id="about"
-      className="relative py-20 min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-gray-200 overflow-hidden font-mono"
+      className="relative min-h-screen w-full overflow-hidden py-15 px-0 bg-gradient-to-br from-black via-gray-900 to-black text-white font-mono text-sm"
     >
       {/* Animated neon grid background (like Hero) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] animate-pulse"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-extrabold tracking-widest text-white">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-widest text-white">
             <span className="text-cyan-400">{`<`}</span>
             About Me
             <span className="text-purple-400">{`/>`}</span>
           </h2>
-          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-            A glimpse into my coding journey, skills, and academic milestones ⚡
-          </p>
+ 
         </div>
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-black/50 backdrop-blur-lg rounded-full p-1 border border-gray-700 shadow-[0_0_15px_rgba(0,255,255,0.3)]">
+          <div className="inline-flex bg-black/50 backdrop-blur-lg rounded-full p-1 border border-gray-700 shadow-[0_0_15px_rgba(0,255,255,0.3)] text-xs sm:text-sm">
             {[
               { id: "about", label: "About", icon: <FaUser className="mr-2" /> },
               {
@@ -61,7 +59,7 @@ function About() {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-black/40 backdrop-blur-lg border border-gray-800 rounded-2xl shadow-[0_0_30px_rgba(0,255,255,0.2)] overflow-hidden">
+        <div className="bg-black/40 backdrop-blur-lg border border-gray-800 rounded-2xl shadow-[0_0_30px_rgba(0,255,255,0.2)] overflow-hidden px-0">
           {activeTab === "about" && (
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Personal Info */}
@@ -169,7 +167,7 @@ function About() {
                     icon: <FaAward />,
                   },
                 ].map((edu, i) => (
-                  <div key={i} className="relative pl-12">
+                  <div key={i} className="relative pl-10 text-xs sm:text-sm">
                     <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-cyan-400 to-purple-500"></div>
                     <div className="absolute -left-1 top-0 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 flex items-center justify-center text-black shadow-md">
                       {edu.icon}
