@@ -63,7 +63,7 @@ function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16 py-20">
           {/* Text content */}
           <div className="text-center lg:text-left max-w-2xl p-8">
-            <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-4 tracking-widest">
+            <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-4 tracking-widest">
               <span className="text-cyan-400">{"<"}</span>
               Abhijit Rabidas
               <span className="text-purple-400">{"/>"}</span>
