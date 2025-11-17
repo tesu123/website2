@@ -3,6 +3,8 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Portfolio from "./assets/images/portfolioNew.jpg";
 import Monetrix from "./assets/images/Monetrix.jpg";
 import microdome from "./assets/images/MicrodomeNew.jpg";
+import Jurms from "./assets/images/jurms.jpg";
+import Btds from "./assets/images/btds.jpg";
 import DummyProjectTh from "./assets/images/dummy.png";
 
 function Projects() {
@@ -37,34 +39,33 @@ function Projects() {
       tags: ["React", "Tailwind CSS", "Node.js", "PostgreSQL"],
       github: "https://github.com/Abhijit-Rabidas/",
       demo: "https://monetrix.tech/",
-      category: "web",
+      category: "fullstack",
     },
     {
-      pimage: DummyProjectTh,
-      title: "AI Image Generator",
-      description: "Web application that generates images using AI models",
-      tags: ["React", "Python", "TensorFlow", "Flask"],
+      pimage: Jurms,
+      title: "Routine Management System",
+      description:
+        "JURMS helps students, faculty, and administrators manage academic schedules effortlessly",
+      tags: ["React", "Tailwind CSS", "Node.js", "MongoDB"],
+      github: "https://github.com/Abhijit-Rabidas/",
+      demo: "https://jurms.collegebyte.in/",
+      category: "fullstack",
+    },
+    {
+      pimage: Btds,
+      title: "Brain Tumor Detection and Segmentation",
+      description:
+        "System for detecting and segementing brain tumors from CT scans using SVM and Advanced Image Processing techniques",
+      tags: [
+        "MATLAB",
+        "SVM",
+        "HOG Feature Extraction",
+        "Otsu Thresholding",
+        "k-means clustering",
+      ],
       github: "https://github.com/Abhijit-Rabidas/",
       demo: "#",
       category: "ai",
-    },
-    {
-      pimage: DummyProjectTh,
-      title: "Weather Dashboard",
-      description: "Real-time weather forecasting application with maps",
-      tags: ["React", "API", "Chart.js", "Geolocation"],
-      github: "https://github.com/Abhijit-Rabidas/",
-      demo: "#",
-      category: "web",
-    },
-    {
-      pimage: DummyProjectTh,
-      title: "Chat Application",
-      description: "Real-time messaging platform with user authentication",
-      tags: ["React", "Firebase", "WebSockets", "Tailwind CSS"],
-      github: "https://github.com/Abhijit-Rabidas/",
-      demo: "#",
-      category: "fullstack",
     },
   ];
 
@@ -258,6 +259,5 @@ const ProjectCard = ({ project }) => (
     </div>
   </article>
 );
-
 
 export default Projects;

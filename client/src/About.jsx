@@ -27,20 +27,27 @@ function About() {
             About Me
             <span className="text-purple-400">{`/>`}</span>
           </h2>
- 
         </div>
 
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
           <div className="inline-flex bg-black/50 backdrop-blur-lg rounded-full p-1 border border-gray-700 shadow-[0_0_15px_rgba(0,255,255,0.3)] text-xs sm:text-sm">
             {[
-              { id: "about", label: "About", icon: <FaUser className="mr-2" /> },
+              {
+                id: "about",
+                label: "About",
+                icon: <FaUser className="mr-2" />,
+              },
               {
                 id: "education",
                 label: "Education",
                 icon: <FaGraduationCap className="mr-2" />,
               },
-              { id: "skills", label: "Skills", icon: <FaCode className="mr-2" /> },
+              {
+                id: "skills",
+                label: "Skills",
+                icon: <FaCode className="mr-2" />,
+              },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -83,23 +90,28 @@ function About() {
                       className="bg-black/60 border border-gray-700 p-4 rounded-lg hover:border-cyan-400/50 transition"
                     >
                       <p className="text-sm text-gray-400">{info.label}</p>
-                      <p className="font-semibold text-cyan-400">{info.value}</p>
+                      <p className="font-semibold text-cyan-400">
+                        {info.value}
+                      </p>
                     </div>
                   ))}
                 </div>
 
                 <p className="text-gray-300 leading-relaxed mb-6">
                   Hello! I’m{" "}
-                  <span className="font-bold text-purple-400">Abhijit Rabidas</span>,
-                  a software developer passionate about building futuristic apps and
-                  solving real-world problems. Currently pursuing my MCA at Jadavpur
-                  University 🎓.
+                  <span className="font-bold text-purple-400">
+                    Abhijit Rabidas
+                  </span>
+                  , a software developer passionate about building futuristic
+                  apps and solving real-world problems. Currently pursuing my
+                  MCA at Jadavpur University 🎓.
                 </p>
 
                 <div className="flex items-center bg-black/60 p-4 rounded-lg border-l-4 border-cyan-400 shadow-[0_0_15px_rgba(0,255,255,0.4)]">
                   <FaLightbulb className="text-cyan-400 mr-3 text-xl" />
                   <p className="text-gray-300">
-                    “Code is my superpower. I love blending logic + creativity ⚔”
+                    “Code is my superpower. I love blending logic + creativity
+                    ⚔”
                   </p>
                 </div>
               </div>
@@ -127,7 +139,9 @@ function About() {
                       key={i}
                       className="bg-black/50 border border-gray-700 p-4 rounded-lg text-center hover:border-purple-500/50 transition"
                     >
-                      <p className="text-2xl font-bold text-cyan-400">{stat.value}</p>
+                      <p className="text-2xl font-bold text-cyan-400">
+                        {stat.value}
+                      </p>
                       <p className="text-sm text-gray-400">{stat.label}</p>
                     </div>
                   ))}
@@ -163,7 +177,7 @@ function About() {
                   {
                     year: "2024",
                     title: "WB JECA Rank 61",
-                    place: "West Bengal Joint Entrance",
+                    place: "West Bengal Joint Entrance Board",
                     icon: <FaAward />,
                   },
                 ].map((edu, i) => (
@@ -209,11 +223,27 @@ function About() {
                 {[
                   {
                     category: "Frontend",
-                    skills: ["React", "Next.js", "Tailwind CSS", "JavaScript", "HTML", "CSS"],
+                    skills: [
+                      "React",
+                      "Next.js",
+                      "Tailwind CSS",
+                      "JavaScript",
+                      "HTML",
+                      "CSS",
+                    ],
                   },
-                  { category: "Backend", skills: ["Node.js", "Express", "MySQL", "PostgreSQL"] },
-                  { category: "Languages", skills: ["C", "C++", "JavaScript", "Python", "Java", "SQL"] },
-                  { category: "Tools", skills: ["Git", "GitHub", "VS Code", "Vercel", "Postman"] },
+                  {
+                    category: "Backend",
+                    skills: ["Node.js", "Express", "MySQL", "PostgreSQL"],
+                  },
+                  {
+                    category: "Languages",
+                    skills: ["C", "C++", "JavaScript", "Python", "Java", "SQL"],
+                  },
+                  {
+                    category: "Tools",
+                    skills: ["Git", "GitHub", "VS Code", "Vercel", "Postman"],
+                  },
                 ].map((group, index) => (
                   <div
                     key={index}
