@@ -18,7 +18,7 @@ function Projects() {
         "Modern responsive portfolio built with React and Tailwind CSS",
       tags: ["React", "Tailwind CSS", "Vite", "Node.js"],
       github: "https://github.com/Abhijit-Rabidas/",
-      demo: "https://www.abhijitrabidas.live",
+      demo: "https://www.abhijitrabidas.me",
       category: "web",
     },
     {
