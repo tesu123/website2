@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Portfolio from "./assets/images/portfolioNew.png";
-import Monetrix from "./assets/images/Monetrix.jpg";
-import microdome from "./assets/images/MicrodomeNew.jpg";
-import Jurms from "./assets/images/jurms.jpg";
+import Monetrix from "./assets/images/Monetrix.png";
+import microdome from "./assets/images/MicrodomeNew.png";
+import Jurms from "./assets/images/jurms.png";
 import Btds from "./assets/images/btds.jpg";
 
 export default function Projects() {
