@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import Portfolio from "./assets/images/portfolioNew.jpg";
+import Portfolio from "./assets/images/portfolioNew.png";
 import Monetrix from "./assets/images/Monetrix.jpg";
 import microdome from "./assets/images/MicrodomeNew.jpg";
 import Jurms from "./assets/images/jurms.jpg";
 import Btds from "./assets/images/btds.jpg";
-import DummyProjectTh from "./assets/images/dummy.png";
 
-function Projects() {
+export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const projects = [
@@ -15,8 +14,8 @@ function Projects() {
       pimage: Portfolio,
       title: "Portfolio Website",
       description:
-        "Modern responsive portfolio built with React and Tailwind CSS",
-      tags: ["React", "Tailwind CSS", "Vite", "Node.js"],
+        "Modern responsive portfolio built with React and Tailwind CSS.",
+      tags: ["React", "Tailwind", "Vite"],
       github: "https://github.com/Abhijit-Rabidas/",
       demo: "https://www.abhijitrabidas.me",
       category: "web",
@@ -25,8 +24,8 @@ function Projects() {
       pimage: microdome,
       title: "Microdome",
       description:
-        "An online coaching website for entrance exams and semester batches, offering structured courses and study materials",
-      tags: ["React", "Node.js", "MongoDB", "Redux"],
+        "Online coaching platform offering structured courses and study materials.",
+      tags: ["React", "Node.js", "MongoDB"],
       github: "https://github.com/souravghoshofficial/microdome",
       demo: "https://www.microdomeclasses.in/",
       category: "fullstack",
@@ -35,8 +34,8 @@ function Projects() {
       pimage: Monetrix,
       title: "Monetrix",
       description:
-        "Finance Management Web App to help users manage daily spending, track budgets, and analyze financial habits",
-      tags: ["React", "Tailwind CSS", "Node.js", "PostgreSQL"],
+        "Finance management web app for tracking spending and analyzing habits.",
+      tags: ["React", "Node.js", "PostgreSQL"],
       github: "https://github.com/Abhijit-Rabidas/",
       demo: "https://monetrix.tech/",
       category: "fullstack",
@@ -45,24 +44,18 @@ function Projects() {
       pimage: Jurms,
       title: "Routine Management System",
       description:
-        "JURMS helps students, faculty, and administrators manage academic schedules effortlessly",
-      tags: ["React", "Tailwind CSS", "Node.js", "MongoDB"],
+        "System for managing academic schedules for students and faculty.",
+      tags: ["React", "Node.js", "MongoDB"],
       github: "https://github.com/Abhijit-Rabidas/",
       demo: "https://jurms.collegebyte.in/",
       category: "fullstack",
     },
     {
       pimage: Btds,
-      title: "Brain Tumor Detection and Segmentation",
+      title: "Brain Tumor Detection",
       description:
-        "System for detecting and segementing brain tumors from CT scans using SVM and Advanced Image Processing techniques",
-      tags: [
-        "MATLAB",
-        "SVM",
-        "HOG Feature Extraction",
-        "Otsu Thresholding",
-        "k-means clustering",
-      ],
+        "AI system for detecting and segmenting brain tumors from CT scans.",
+      tags: ["MATLAB", "SVM", "Image Processing"],
       github: "https://github.com/Abhijit-Rabidas/",
       demo: "#",
       category: "ai",
@@ -70,63 +63,57 @@ function Projects() {
   ];
 
   const filters = [
-    { id: "all", label: "All Projects" },
-    { id: "web", label: "Web Development" },
+    { id: "all", label: "All" },
+    { id: "web", label: "Web" },
     { id: "fullstack", label: "Full Stack" },
     { id: "ai", label: "AI/ML" },
   ];
 
-  const filteredProjects =
+  const filtered =
     activeFilter === "all"
       ? projects
-      : projects.filter((project) => project.category === activeFilter);
+      : projects.filter((p) => p.category === activeFilter);
 
   return (
     <section
-      className="relative min-h-screen w-full overflow-hidden py-20 px-6 bg-gradient-to-br from-black via-gray-900 to-black text-white font-mono"
       id="projects"
+      className="py-24 px-6
+      bg-white dark:bg-neutral-950
+      text-neutral-900 dark:text-neutral-100"
     >
-      {/* Animated background grid like Hero */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] animate-pulse"></div>
+      <div className="max-w-6xl mx-auto">
 
-      <div className="container mx-auto relative z-10">
-        {/* Heading */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-widest">
-            <span className="text-cyan-400">{"<"}</span>
+        {/* Title */}
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">
             Projects
-            <span className="text-purple-400">{"/>"}</span>
           </h2>
+          <p className="text-neutral-500 dark:text-neutral-400 mt-3">
+            Some of the work I have built recently.
+          </p>
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {filters.map((filter) => (
+        <div className="flex justify-center flex-wrap gap-3 mb-12">
+          {filters.map((f) => (
             <button
-              key={filter.id}
-              onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-2 rounded-lg font-semibold border transition-all duration-500 shadow-[0_0_10px_rgba(0,255,255,0.6)] hover:shadow-[0_0_20px_rgba(0,255,255,1)] ${
-                activeFilter === filter.id
-                  ? "bg-cyan-400 text-black border-cyan-400"
-                  : "border-gray-600 text-gray-300 hover:bg-gray-800"
+              key={f.id}
+              onClick={() => setActiveFilter(f.id)}
+              className={`px-4 py-2 text-sm rounded-md border transition ${
+                activeFilter === f.id
+                  ? "bg-neutral-900 text-white dark:bg-white dark:text-black"
+                  : "border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900"
               }`}
             >
-              {filter.label}
+              {f.label}
             </button>
           ))}
         </div>
 
-        {/* Scrollable Projects on Mobile */}
-        <div className="md:hidden border border-gray-700 rounded-xl max-h-[80vh] overflow-y-auto px-3 py-6 space-y-6 shadow-[0_0_15px_rgba(200,0,255,0.3)]">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
-
-        {/* Grid on larger screens */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+        {/* Projects Grid */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((project, i) => (
+            <ProjectCard key={i} project={project} />
           ))}
         </div>
 
@@ -136,128 +123,92 @@ function Projects() {
             href="https://github.com/Abhijit-Rabidas"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 font-bold rounded-lg border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-black transition duration-500 shadow-[0_0_10px_rgba(200,0,255,0.6)] hover:shadow-[0_0_20px_rgba(200,0,255,1)] inline-flex items-center"
+            className="inline-flex items-center gap-2
+            px-6 py-3 rounded-md text-sm font-medium
+            border border-neutral-300
+            dark:border-neutral-700
+            hover:bg-neutral-100
+            dark:hover:bg-neutral-900
+            transition"
           >
-            🚀 View All Projects
+            View All Projects
           </a>
         </div>
+
       </div>
     </section>
   );
 }
 
-// const ProjectCard = ({ project }) => (
-//   <article className="group relative bg-gray-900/60 backdrop-blur-md border border-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,255,255,0.6)] hover:-translate-y-2 text-xs sm:text-sm">
-//     <div className="h-30 overflow-hidden relative">
-//       <img
-//         src={project.pimage}
-//         alt={project.title}
-//         className="w-full h- object-cover transition-transform duration-700 group-hover:scale-110"
-//         loading="lazy"
-//       />
-//       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-//     </div>
-
-//     <div className="p-6">
-//       <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-//         {project.title}
-//       </h3>
-//       <p className="text-gray-400 mb-4">{project.description}</p>
-
-//       <div className="flex flex-wrap gap-2 mb-4">
-//         {project.tags.map((tag, i) => (
-//           <span
-//             key={i}
-//             className="text-xs font-medium px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded-full"
-//           >
-//             {tag}
-//           </span>
-//         ))}
-//       </div>
-
-//       <div className="flex space-x-3">
-//         <a
-//           href={project.github}
-//           target="_blank"
-//           rel="noopener noreferrer"
-//           className="flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-gray-800 text-gray-200 hover:bg-gray-700 transition"
-//         >
-//           <FaGithub className="mr-2" /> Code
-//         </a>
-//         <a
-//           href={project.demo}
-//           target="_blank"
-//           rel="noopener noreferrer"
-//           className={`flex items-center px-4 py-2 text-sm font-medium rounded-lg transition ${
-//             project.demo === "#"
-//               ? "bg-gray-700 text-gray-500 cursor-not-allowed"
-//               : "bg-gradient-to-r from-cyan-400 to-purple-500 text-black hover:shadow-lg hover:shadow-purple-500/40"
-//           }`}
-//           onClick={(e) => project.demo === "#" && e.preventDefault()}
-//         >
-//           <FaExternalLinkAlt className="mr-2" /> Demo
-//         </a>
-//       </div>
-//     </div>
-//   </article>
-// );
-
-const ProjectCard = ({ project }) => (
-  <article className="group relative bg-gray-900/60 backdrop-blur-md border border-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,255,255,0.6)] hover:-translate-y-2 text-xs sm:text-sm">
-    {/* Image Section */}
-    <div className="h-35 sm:h-60 overflow-hidden relative">
+function ProjectCard({ project }) {
+  return (
+    <div
+      className="border border-neutral-200 dark:border-neutral-800
+      rounded-xl overflow-hidden
+      hover:shadow-md transition"
+    >
       <img
         src={project.pimage}
         alt={project.title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        loading="lazy"
+        className="w-full h-48 object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-    </div>
 
-    {/* Content */}
-    <div className="p-6">
-      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-        {project.title}
-      </h3>
-      <p className="text-gray-400 mb-4">{project.description}</p>
+      <div className="p-6">
 
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.tags.map((tag, i) => (
-          <span
-            key={i}
-            className="text-xs font-medium px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded-full"
+        <h3 className="text-lg font-semibold mb-2">
+          {project.title}
+        </h3>
+
+        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
+          {project.description}
+        </p>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-5">
+          {project.tags.map((tag, i) => (
+            <span
+              key={i}
+              className="text-xs px-2 py-1 rounded-md
+              bg-neutral-100 dark:bg-neutral-900
+              text-neutral-600 dark:text-neutral-400"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Buttons */}
+        <div className="flex gap-3">
+
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm
+            border border-neutral-300 dark:border-neutral-700
+            px-3 py-2 rounded-md
+            hover:bg-neutral-100 dark:hover:bg-neutral-900"
           >
-            {tag}
-          </span>
-        ))}
-      </div>
+            <FaGithub /> Code
+          </a>
 
-      <div className="flex space-x-3">
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center px-4 py-2 text-sm font-medium rounded-lg bg-gray-800 text-gray-200 hover:bg-gray-700 transition"
-        >
-          <FaGithub className="mr-2" /> Code
-        </a>
-        <a
-          href={project.demo}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`flex items-center px-4 py-2 text-sm font-medium rounded-lg transition ${
-            project.demo === "#"
-              ? "bg-gray-700 text-gray-500 cursor-not-allowed"
-              : "bg-gradient-to-r from-cyan-400 to-purple-500 text-black hover:shadow-lg hover:shadow-purple-500/40"
-          }`}
-          onClick={(e) => project.demo === "#" && e.preventDefault()}
-        >
-          <FaExternalLinkAlt className="mr-2" /> Demo
-        </a>
+          {project.demo !== "#" && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm
+              bg-neutral-900 text-white
+              dark:bg-white dark:text-black
+              px-3 py-2 rounded-md"
+            >
+              <FaExternalLinkAlt /> Demo
+            </a>
+          )}
+
+        </div>
+
       </div>
     </div>
-  </article>
-);
-
-export default Projects;
+  );
+}
