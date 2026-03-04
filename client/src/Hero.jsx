@@ -1,155 +1,156 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import img from "./assets/images/profileimg.png";
 import resume from "./assets/files/Abhijit_Rabidas.pdf";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
-function Hero() {
-  const [dynamicText, setDynamicText] = useState("");
+export default function Hero() {
   const phrases = [
-    "⚡ Web Developer",
-    "🎓 MCA Student @ JU",
-    "🚀 Tech Enthusiast",
-    "🧩 Problem Solver",
+    "Web Developer",
+    "MCA Student @ Jadavpur University",
+    "Tech Enthusiast",
+    "Problem Solver",
   ];
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(150);
-  const [showCursor, setShowCursor] = useState(true);
-  const animationRef = useRef(null);
 
-  // Typing effect
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
   useEffect(() => {
-    const type = () => {
-      const currentPhrase = phrases[currentPhraseIndex];
-      const updatedText = isDeleting
-        ? currentPhrase.substring(0, dynamicText.length - 1)
-        : currentPhrase.substring(0, dynamicText.length + 1);
+    const current = phrases[index];
+    const timeout = setTimeout(() => {
+      setText((prev) =>
+        deleting
+          ? current.substring(0, prev.length - 1)
+          : current.substring(0, prev.length + 1)
+      );
 
-      setDynamicText(updatedText);
-
-      if (!isDeleting && updatedText === currentPhrase) {
-        setTimeout(() => {
-          setIsDeleting(true);
-          setTypingSpeed(50);
-        }, 1000);
-      } else if (isDeleting && updatedText === "") {
-        setIsDeleting(false);
-        setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
-        setTypingSpeed(150);
+      if (!deleting && text === current) {
+        setTimeout(() => setDeleting(true), 1000);
       }
-    };
 
-    animationRef.current = setTimeout(type, typingSpeed);
-    return () => clearTimeout(animationRef.current);
-  }, [dynamicText, currentPhraseIndex, isDeleting, typingSpeed]);
+      if (deleting && text === "") {
+        setDeleting(false);
+        setIndex((prev) => (prev + 1) % phrases.length);
+      }
+    }, deleting ? 50 : 120);
 
-  // Cursor blink effect
-  useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev);
-    }, 500);
-    return () => clearInterval(cursorInterval);
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [text, deleting, index, phrases]);
 
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center px-6 bg-gradient-to-br from-black via-gray-900 to-black text-white font-mono"
+      className="min-h-screen flex items-center pt-24 px-6
+      bg-white dark:bg-neutral-950
+      text-neutral-900 dark:text-neutral-100"
     >
-      {/* Animated background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] animate-pulse"></div>
+      <div className="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
 
-      <div className="container mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 py-20">
-          {/* Text content */}
-          <div className="text-center lg:text-left max-w-2xl p-8">
-            <h1 className="text-4xl sm:text-6xl font-extrabold text-white mb-4 tracking-widest">
-              <span className="text-cyan-400">{"<"}</span>
-              Abhijit Rabidas
-              <span className="text-purple-400">{"/>"}</span>
-            </h1>
+        {/* LEFT CONTENT */}
+        <div className="text-center lg:text-left">
 
-            <div className="h-16 sm:h-20 mb-6">
-              <p className="text-xl sm:text-2xl md:text-3xl text-gray-200 font-semibold tracking-wide">
-                {`> `}
-                <span className="text-cyan-400">
-                  {dynamicText}
-                  <span
-                    className={`inline-block w-[8px] h-[1.2em] bg-purple-400 ml-1 ${
-                      showCursor ? "opacity-100" : "opacity-0"
-                    }`}
-                  ></span>
-                </span>
-              </p>
-            </div>
+          {/* Label */}
+          <p className="text-sm uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-4">
+            Software Developer
+          </p>
 
-            <p className="text-lg text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              Welcome to my dev world 🌍. I love solving problems, building
-              futuristic web apps, and leveling up my coding journey one commit
-              at a time.
-            </p>
+          {/* Name */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+            Abhijit Rabidas
+          </h1>
 
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a
-                href="#contact"
-                className="px-6 py-3 font-bold rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition duration-500 shadow-[0_0_10px_rgba(0,255,255,0.6)] hover:shadow-[0_0_20px_rgba(0,255,255,1)] text-center"
-              >
-                ⚔ Contact Me
-              </a>
-              <a
-                href={resume}
-                download="Abhijit_Rabidas_Resume.pdf"
-                className="px-6 py-3 font-bold rounded-lg border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-black transition duration-500 shadow-[0_0_10px_rgba(200,0,255,0.6)] hover:shadow-[0_0_20px_rgba(200,0,255,1)] text-center"
-              >
-                🎮 Download Resume
-              </a>
-            </div>
+          {/* Typing Text */}
+          <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 h-7">
+            {text}
+            <span className="ml-1 animate-pulse">|</span>
+          </p>
 
-            {/* Social links */}
-            <div className="flex justify-center lg:justify-start gap-8 mt-10">
-              <a
-                href="https://www.linkedin.com/in/abhijit-rabidas"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-3xl text-gray-400 hover:text-cyan-400 transition transform hover:scale-125"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://github.com/Abhijit-Rabidas"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-3xl text-gray-400 hover:text-white transition transform hover:scale-125"
-              >
-                <FaGithub />
-              </a>
-              <a
-                href="https://www.instagram.com/aj_das_01"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-3xl text-gray-400 hover:text-pink-400 transition transform hover:scale-125"
-              >
-                <FaInstagram />
-              </a>
-            </div>
+          {/* Description */}
+          <p className="mt-6 max-w-xl text-neutral-600 dark:text-neutral-400">
+            I build clean and scalable web applications focused on great user
+            experience. Passionate about learning modern technologies and
+            solving real-world problems.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-8">
+
+            <a
+              href="#projects"
+              className="px-6 py-3 text-sm font-medium rounded-md
+              bg-neutral-900 text-white
+              hover:bg-neutral-700
+              dark:bg-white dark:text-neutral-900
+              dark:hover:bg-neutral-200
+              transition"
+            >
+              View Projects
+            </a>
+
+            <a
+              href={resume}
+              download
+              className="px-6 py-3 text-sm font-medium rounded-md
+              border border-neutral-300
+              hover:bg-neutral-100
+              dark:border-neutral-700
+              dark:hover:bg-neutral-900
+              transition"
+            >
+              Download Resume
+            </a>
+
           </div>
 
-          {/* Profile image with glowing ring */}
-          <div className="relative group">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 blur-2xl opacity-60 group-hover:opacity-90 transition duration-700 animate-pulse"></div>
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-gray-800 shadow-[0_0_25px_rgba(0,255,255,0.5)] group-hover:shadow-[0_0_50px_rgba(200,0,255,0.9)] transition duration-700">
-              <img
-                src={img}
-                alt="Abhijit Rabidas"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          {/* Social Links */}
+          <div className="flex gap-6 justify-center lg:justify-start mt-8 text-neutral-500 dark:text-neutral-400">
+
+            <a
+              href="https://github.com/Abhijit-Rabidas"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-neutral-900 dark:hover:text-white transition"
+            >
+              <FaGithub size={20} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/abhijit-rabidas"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-neutral-900 dark:hover:text-white transition"
+            >
+              <FaLinkedin size={20} />
+            </a>
+
+            <a
+              href="https://www.instagram.com/aj_das_01"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-neutral-900 dark:hover:text-white transition"
+            >
+              <FaInstagram size={20} />
+            </a>
+
           </div>
+
         </div>
+
+        {/* RIGHT IMAGE */}
+        <div className="flex justify-center lg:justify-end">
+
+          <img
+            src={img}
+            alt="Abhijit Rabidas"
+            className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80
+            rounded-full object-cover
+            border border-neutral-200 dark:border-neutral-800
+            shadow-sm"
+          />
+
+        </div>
+
       </div>
     </section>
   );
 }
-
-export default Hero;
